@@ -16,7 +16,7 @@ header {
     background-color: #4CAF50;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 1px 0;
 }
 
 nav ul {
@@ -43,8 +43,8 @@ nav ul li a:hover {
 }
 
 main {
-    padding-top: 170px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 80px;
 }
 
 .switch-container {
@@ -192,7 +192,7 @@ button:hover {
     color: firebrick;
 }
 
-@media (max-width: 800px){
+@media (max-width: 700px){
     .button-container {
         flex-direction: column;
         

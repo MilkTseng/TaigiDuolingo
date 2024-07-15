@@ -1,66 +1,67 @@
 
 
-function Alphebet(zhuin, tailo){
+function Alphebet(zhuin, tailo, index){
     this.zhuin = zhuin;
     this.tailo = tailo;
+    this.index = index;
 }
 let consonants = [
-    new Alphebet("ㄅ", "p"),
-    new Alphebet("ㄆ", "ph"),
-    new Alphebet("ㄇ", "m"),
-    new Alphebet("ㆠ", "b"),
+    new Alphebet("ㄅ", "p", 0),
+    new Alphebet("ㄆ", "ph", 0),
+    new Alphebet("ㄇ", "m", 0),
+    new Alphebet("ㆠ", "b", 0),
     new Alphebet("", ""),
-    new Alphebet("ㄉ", "t"),
-    new Alphebet("ㄊ", "th"),
-    new Alphebet("ㄋ", "n"),
-    new Alphebet("ㄌ", "l"),
+    new Alphebet("ㄉ", "t", 0),
+    new Alphebet("ㄊ", "th", 0),
+    new Alphebet("ㄋ", "n", 0),
+    new Alphebet("ㄌ", "l", 0),
     new Alphebet("", ""),
-    new Alphebet("ㄍ", "k"),
-    new Alphebet("ㄎ", "kh"),
-    new Alphebet("ㄏ", "h"),
-    new Alphebet("ㆣ", "g"),
-    new Alphebet("ㄫ", "ng"),
-    new Alphebet("ㄐ", "ts"),
-    new Alphebet("ㄑ", "tsh"),
-    new Alphebet("ㄒ", "s"),
-    new Alphebet("ㆢ", "j"),
+    new Alphebet("ㄍ", "k", 0),
+    new Alphebet("ㄎ", "kh", 0),
+    new Alphebet("ㄏ", "h", 0),
+    new Alphebet("ㆣ", "g", 0),
+    new Alphebet("ㄫ", "ng", 0),
+    new Alphebet("ㄐ", "ts", 0),
+    new Alphebet("ㄑ", "tsh", 0),
+    new Alphebet("ㄒ", "s", 0),
+    new Alphebet("ㆢ", "j", 0),
     new Alphebet("", ""),
-    new Alphebet("ㄗ", "ts"),
-    new Alphebet("ㄘ" ,"tsh"),
-    new Alphebet("ㄙ", "s"),
-    new Alphebet("ㆡ", "j"),
+    new Alphebet("ㄗ", "ts", 1),
+    new Alphebet("ㄘ" ,"tsh", 1),
+    new Alphebet("ㄙ", "s", 1),
+    new Alphebet("ㆡ", "j", 1),
     new Alphebet("", ""),
 ]
 
 let vowels = [
-    new Alphebet("ㄧ", "i"),
-    new Alphebet("ㄨ", "u"),
-    new Alphebet("ㆪ", "inn"),
-    new Alphebet("ㆫ", "unn"),
+    new Alphebet("ㄧ", "i", 0),
+    new Alphebet("ㄨ", "u", 0),
+    new Alphebet("ㆪ", "inn", 0),
+    new Alphebet("ㆫ", "unn", 0),
     new Alphebet("", ""),
     new Alphebet("", ""),
-    new Alphebet("ㄚ", "a"),
-    new Alphebet("ㆦ", "oo"),
-    new Alphebet("ㄜ", "o"),
-    new Alphebet("ㆤ", "e"),
-    new Alphebet("ㄞ", "ai"),
-    new Alphebet("ㄠ", "au"),
-    new Alphebet("ㆩ", "ann"),
-    new Alphebet("ㆧ", "onn"),
+    new Alphebet("ㄚ", "a", 0),
+    new Alphebet("ㆦ", "oo", 0),
+    new Alphebet("ㄜ", "o", 0),
+    new Alphebet("ㆤ", "e", 0),
+    new Alphebet("ㄞ", "ai", 0),
+    new Alphebet("ㄠ", "au", 0),
+    new Alphebet("ㆩ", "ann", 0),
+    new Alphebet("ㆧ", "onn", 0),
     new Alphebet("", ""),
-    new Alphebet("ㆥ", "enn"),
-    new Alphebet("ㆮ", "ainn"),
-    new Alphebet("ㆯ", "aunn"),
-    new Alphebet("ㆬ", "m"),
-    new Alphebet("ㆰ", "am"),
-    new Alphebet("ㆱ", "om"),
-    new Alphebet("ㄢ", "an"),
-    new Alphebet("ㄣ", "n"),
+    new Alphebet("ㆥ", "enn", 0),
+    new Alphebet("ㆮ", "ainn", 0),
+    new Alphebet("ㆯ", "aunn", 0),
+    new Alphebet("ㆬ", "m", 1),
+    new Alphebet("ㆰ", "am", 0),
+    new Alphebet("ㆱ", "om", 0),
+    new Alphebet("ㄢ", "an", 0),
+    new Alphebet("ㄣ", "n", 1),
     new Alphebet("", ""),
-    new Alphebet("ㆭ", "ng"),
-    new Alphebet("ㄤ", "ang"),
-    new Alphebet("ㄥ", "ng"),
-    new Alphebet("ㆲ", "ong"),
+    new Alphebet("ㆭ", "ng", 1),
+    new Alphebet("ㄤ", "ang", 0),
+    new Alphebet("ㄥ", "ng", 2),
+    new Alphebet("ㆲ", "ong", 0),
     new Alphebet("", ""),
     new Alphebet("", ""),
 
@@ -112,7 +113,7 @@ function loadAlphebet(isTailo){
         }
         else{
             consonantsHtml +=`
-            <button data-sound="sounds/${consonants[i].tailo}.wav" class="consonant">
+            <button data-sound="sounds/${consonants[i].tailo}${consonants[i].index}.mp3" class="consonant">
                 <span class="big-letter">${isTailo? consonants[i].tailo:consonants[i].zhuin}</span>
                 <span class="consonant-small-letter">${isTailo? consonants[i].zhuin:consonants[i].tailo}</span>
             </button>
@@ -126,7 +127,7 @@ function loadAlphebet(isTailo){
         }
         else{
             vowelsHtml +=`
-            <button data-sound="sounds/${vowels[i].tailo}.wav" class="vowel">
+            <button data-sound="sounds/${vowels[i].tailo}${vowels[i].index}.mp3" class="vowel">
                 <span class="big-letter">${isTailo? vowels[i].tailo:vowels[i].zhuin}</span>
                 <span class="vowel-small-letter">${isTailo? vowels[i].zhuin:vowels[i].tailo}</span>
             </button>

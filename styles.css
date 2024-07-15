@@ -44,7 +44,7 @@ nav ul li a:hover {
 
 main {
     padding-top: 150px;
-    padding-bottom: 80px;
+    padding-bottom: 30px;
 }
 
 .switch-container {
@@ -227,6 +227,12 @@ button:hover {
         font-size: 2.5vw;
     }
 
+}
+
+.info {
+    color: white;
+    text-align: right;
+    text-decoration: underline;
 }
 
 footer {

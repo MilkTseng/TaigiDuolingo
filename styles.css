@@ -1,0 +1,239 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #575757;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: #333;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding-top: 170px;
+    padding-bottom: 100px;
+}
+
+.switch-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: gray;
+    transition: 0.2s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.2s;
+    border-radius: 50%;
+}
+
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.switchLabel {
+    margin: 10px;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#consonants {
+    width: 45%;
+}
+
+#vowels {
+    width: 55%;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    padding: 2vw;
+    max-width: 90%;
+    justify-content: center;
+}
+
+button {
+    position: relative;
+    width: 6vw;
+    height: 6vw;
+    border: 0.3vw outset;
+    border-radius: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.consonant {
+    background-color:lightskyblue;
+    border-color: lightskyblue;
+}
+
+.consonant:active {
+    background-color: rgb(162, 218, 252);
+    border-color: rgb(162, 218, 252);
+}
+
+.vowel {
+    background-color:coral;
+    border-color: coral;
+}
+
+.vowel:active {
+    background-color:rgb(249, 158, 125);
+    border-color: rgb(249, 158, 125);
+}
+
+.empty {
+    position: relative;
+    width: 6vw;
+    height: 6vw;
+    background-color:rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+}
+
+.big-letter {
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: #3c3c3c;
+    padding-bottom: 1vw;
+}
+
+.consonant-small-letter, .vowel-small-letter {
+    position: absolute;
+    bottom: 0.2vw;
+    right: 0.4vw;
+    font-size: 1.3vw;
+    color: darkcyan;
+}
+
+
+.consonant-small-letter {
+    color: darkcyan;
+}
+
+.vowel-small-letter {
+    color: firebrick;
+}
+
+@media (max-width: 800px){
+    .button-container {
+        flex-direction: column;
+        
+    }
+    .buttons {
+        gap: 2vw;
+    }
+    #consonants {
+        width: 76%;
+        ;
+    }
+    #vowels {
+        width: 100%;
+    }
+    button {
+        width: 12vw;
+        height: 12vw;
+        border-width: 0.5vw;
+        border-radius: 2vw;
+    }
+    .empty {
+        width: 12vw;
+        height: 12vw;
+    }
+    .big-letter {
+        font-size: 5vw;
+        padding-bottom: 2vw;
+    }
+    .consonant-small-letter, .vowel-small-letter {
+        bottom: 0.5vw;
+        right: 1vw;
+        font-size: 2.5vw;
+    }
+
+}
+
+footer {
+    text-align: center;
+    padding: 0.5em 0;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    bottom: 0;
+}

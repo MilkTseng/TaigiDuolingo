@@ -6,17 +6,19 @@ body {
     background-color: #575757;
 }
 
-.header {
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-}
-
 header {
+    width: 100%;
     background-color: #4CAF50;
     color: white;
     text-align: center;
     padding: 1px 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 nav ul {
@@ -43,14 +45,12 @@ nav ul li a:hover {
 }
 
 main {
-    padding-top: 150px;
-    padding-bottom: 30px;
+    padding: 30px 2vw
 }
 
 .switch-container {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .switch {
@@ -96,13 +96,32 @@ input:checked + .slider:before {
 }
 
 .switchLabel {
-    margin: 10px;
+    margin: 0px 15px;
     color: white;
 }
 
 .button-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 51vw;
+}
+
+#consonant-title, #vowel-title {
+    margin: 3vw;
+    text-align: center;
+    padding: 1.5vw;
+    border-radius: 5px;
+}
+
+#consonant-title {
+    color: darkcyan;
+    background-color: lightskyblue;
+}
+
+#vowel-title {
+    color: firebrick;
+    background-color: coral;
 }
 
 #consonants {
@@ -116,8 +135,7 @@ input:checked + .slider:before {
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 2vw;
-    padding: 2vw;
+    gap: 1.8vw;
     max-width: 90%;
     justify-content: center;
 }
@@ -192,13 +210,35 @@ button:hover {
     color: firebrick;
 }
 
+.info {
+    color: white;
+    text-align: right;
+    text-decoration: underline;
+    font-size: 1.5vw;
+}
+
+footer {
+    font-size: 16px;
+    text-align: center;
+    padding: 0.5em 0;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    bottom: 0;
+}
+
 @media (max-width: 700px){
     .button-container {
         flex-direction: column;
+        height: 170vw;
         
     }
+    #consonant-title, #vowel-title {
+        font-size: 20px;
+    }
     .buttons {
-        gap: 2vw;
+        gap: 1.9vw;
+        padding-left: 2vw;
     }
     #consonants {
         width: 76%;
@@ -226,20 +266,12 @@ button:hover {
         right: 1vw;
         font-size: 2.5vw;
     }
+    .info {
+        font-size: 3vw;
+    }
+    footer {
+        font-size: 3vw;
+    }
 
-}
 
-.info {
-    color: white;
-    text-align: right;
-    text-decoration: underline;
-}
-
-footer {
-    text-align: center;
-    padding: 0.5em 0;
-    background-color: #333;
-    color: white;
-    width: 100%;
-    bottom: 0;
 }

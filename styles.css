@@ -3,12 +3,12 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #575757;
+    background-color: rgb(37, 52, 37);
 }
 
 header {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: forestgreen;
     color: white;
     text-align: center;
     padding: 1px 0;
@@ -24,7 +24,7 @@ nav {
 nav ul {
     list-style: none;
     padding: 0;
-    background-color: #333;
+    background-color: rgb(65, 87, 65);
     margin: 0;
 }
 
@@ -41,12 +41,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #575757;
+    background-color: rgb(94, 124, 94);
 }
 
 main {
-    padding: 30px 2vw
+    padding: 30px 2vw;
 }
+
+/*switch*/
 
 .switch-container {
     display: flex;
@@ -73,7 +75,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: gray;
+    background-color: rgb(65, 87, 65);
     transition: 0.2s;
     border-radius: 34px;
 }
@@ -90,7 +92,6 @@ main {
     border-radius: 50%;
 }
 
-
 input:checked + .slider:before {
     transform: translateX(26px);
 }
@@ -100,18 +101,21 @@ input:checked + .slider:before {
     color: white;
 }
 
+/*buttons*/
+
 .button-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 51vw;
+    height: 52vw;
 }
 
 #consonant-title, #vowel-title {
     margin: 3vw;
     text-align: center;
     padding: 1.5vw;
-    border-radius: 5px;
+    border-radius: 1vw;
+    font-size: 3vw;
 }
 
 #consonant-title {
@@ -124,20 +128,19 @@ input:checked + .slider:before {
     background-color: coral;
 }
 
-#consonants {
-    width: 45%;
-}
-
-#vowels {
-    width: 55%;
-}
-
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.8vw;
-    max-width: 90%;
+    gap: 1.9vw;
     justify-content: center;
+}
+
+#consonants {
+    width: 46%;
+}
+
+#vowels {
+    width: 54%;
 }
 
 button {
@@ -149,7 +152,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     cursor: pointer;
 }
@@ -214,11 +217,58 @@ button:hover {
     color: white;
     text-align: right;
     text-decoration: underline;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
+}
+
+.description-title {
+    color: white;
+    border-radius: 10px;
+    font-size: 32px;
+    margin-left: 10px;
+}
+
+.description-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.small-description-box, .large-description-box {
+    background-color: rgb(65, 87, 65);
+    padding: 1.5vw;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.small-description-box {
+    width: 15%;
+}
+
+.large-description-box {
+    width: 35%;
+}
+
+.small-description-box dt, .large-description-box dt {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.small-description-box dd,.large-description-box dd {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+    line-height: 1.8;
+}
+
+.small-description-box dd b,.large-description-box dd b {
+    color: rgb(80, 211, 80);
 }
 
 footer {
-    font-size: 16px;
+    font-size: 1.5vw;
     text-align: center;
     padding: 0.5em 0;
     background-color: #333;
@@ -230,19 +280,18 @@ footer {
 @media (max-width: 700px){
     .button-container {
         flex-direction: column;
-        height: 170vw;
+        height: 180vw;
         
     }
     #consonant-title, #vowel-title {
-        font-size: 20px;
+        font-size: 5vw;
     }
     .buttons {
-        gap: 1.9vw;
-        padding-left: 2vw;
+        gap: 2.1vw;
     }
     #consonants {
-        width: 76%;
-        ;
+        width: 80%;
+        padding-left: 3.5vw;
     }
     #vowels {
         width: 100%;
@@ -268,6 +317,23 @@ footer {
     }
     .info {
         font-size: 3vw;
+    }
+    .description-title {
+        font-size: 28px;
+    }
+    .description-container {
+        flex-direction: column;
+        align-content: center;
+    }
+    .small-description-box, .large-description-box {
+        width: 80%;
+    }
+    .small-description-box dt, .large-description-box dt {
+        font-size: 24px;
+    }
+    
+    .small-description-box dd,.large-description-box dd {
+        font-size: 18px;
     }
     footer {
         font-size: 3vw;

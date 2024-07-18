@@ -110,7 +110,7 @@ input:checked + .slider:before {
     height: 52vw;
 }
 
-#consonant-title, #vowel-title {
+.button-title {
     margin: 3vw;
     text-align: center;
     padding: 1.5vw;
@@ -118,14 +118,19 @@ input:checked + .slider:before {
     font-size: 3vw;
 }
 
-#consonant-title {
+.button-title.consonants {
     color: darkcyan;
     background-color: lightskyblue;
 }
 
-#vowel-title {
+.button-title.vowels {
     color: firebrick;
     background-color: coral;
+}
+
+.button-title.tones {
+    color: forestgreen;
+    background-color: yellowgreen;
 }
 
 .buttons {
@@ -143,7 +148,17 @@ input:checked + .slider:before {
     width: 54%;
 }
 
-button {
+#tones {
+    display: flex;
+    flex-direction: column;
+    height: 10vw;
+    align-items: center;
+    align-content: center;
+    row-gap: 1vw;
+    column-gap: 5vw;
+}
+
+.button {
     position: relative;
     width: 6vw;
     height: 6vw;
@@ -157,7 +172,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.button:hover {
     transform: scale(1.05);
 }
 
@@ -181,6 +196,23 @@ button:hover {
     border-color: rgb(249, 158, 125);
 }
 
+.tone {
+    background-color: yellowgreen;
+    border-color: yellowgreen;
+}
+
+.tone:active {
+    background-color: rgb(188, 230, 103);
+    border-color: rgb(188, 230, 103);
+}
+
+.tone-term {
+    color: white;
+    font-size: 2vw;
+    height: 3vw;
+    margin: 0;
+}
+
 .empty {
     position: relative;
     width: 6vw;
@@ -196,7 +228,7 @@ button:hover {
     padding-bottom: 1vw;
 }
 
-.consonant-small-letter, .vowel-small-letter {
+.small-letter {
     position: absolute;
     bottom: 0.2vw;
     right: 0.4vw;
@@ -204,13 +236,16 @@ button:hover {
     color: darkcyan;
 }
 
-
-.consonant-small-letter {
+.small-letter.consonant-letter {
     color: darkcyan;
 }
 
-.vowel-small-letter {
+.small-letter.vowel-letter {
     color: firebrick;
+}
+
+.small-letter.tone-letter {
+    color: forestgreen;
 }
 
 .info {
@@ -233,22 +268,22 @@ button:hover {
     justify-content: space-around;
 }
 
-.small-description-box, .large-description-box {
+.description-box {
     background-color: rgb(65, 87, 65);
     padding: 1.5vw;
     border-radius: 10px;
     margin: 10px 0;
 }
 
-.small-description-box {
+.description-box.small {
     width: 15%;
 }
 
-.large-description-box {
+.description-box.large {
     width: 35%;
 }
 
-.small-description-box dt, .large-description-box dt {
+.description-box dt {
     font-size: 28px;
     color: white;
     font-weight: bold;
@@ -256,22 +291,32 @@ button:hover {
     padding-bottom: 10px;
 }
 
-.small-description-box dd,.large-description-box dd {
+.description-box dd {
     margin: 0;
     font-size: 20px;
     color: white;
     line-height: 1.8;
 }
 
-.small-description-box dd b,.large-description-box dd b {
+.description-box dd b {
     color: rgb(80, 211, 80);
+}
+
+.description-box dd ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.fa-solid {
+    cursor: pointer;
 }
 
 footer {
     font-size: 1.5vw;
     text-align: center;
     padding: 0.5em 0;
-    background-color: #333;
+    background-color: rgb(65, 87, 65);
     color: white;
     width: 100%;
     bottom: 0;
@@ -280,7 +325,7 @@ footer {
 @media (max-width: 700px){
     .button-container {
         flex-direction: column;
-        height: 180vw;
+        height: 170vw;
         
     }
     #consonant-title, #vowel-title {
@@ -296,7 +341,13 @@ footer {
     #vowels {
         width: 100%;
     }
-    button {
+    #tones {
+        height: 18vw;
+    }
+    .tone-term {
+        font-size: 3vw;
+    }
+    .button {
         width: 12vw;
         height: 12vw;
         border-width: 0.5vw;
@@ -310,7 +361,7 @@ footer {
         font-size: 5vw;
         padding-bottom: 2vw;
     }
-    .consonant-small-letter, .vowel-small-letter {
+    .small-letter {
         bottom: 0.5vw;
         right: 1vw;
         font-size: 2.5vw;
@@ -325,14 +376,15 @@ footer {
         flex-direction: column;
         align-content: center;
     }
-    .small-description-box, .large-description-box {
+    .description-box.large, .description-box.small {
         width: 80%;
+        padding: 20px;
     }
-    .small-description-box dt, .large-description-box dt {
+    .description-box dt {
         font-size: 24px;
     }
     
-    .small-description-box dd,.large-description-box dd {
+    .description-box dd {
         font-size: 18px;
     }
     footer {

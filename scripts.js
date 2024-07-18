@@ -67,7 +67,13 @@ let vowels = [
 
 ]
 
-
+let tones = [
+    new Alphebet("ㄚ", "a", 1),
+    new Alphebet("ㄚ˫", "ā", 7),
+    new Alphebet("ㄚ˪", "à", 3),
+    new Alphebet("ㄚˋ", "á", 2),
+    new Alphebet("ㄚˊ", "â", 5),
+]
 
 document.addEventListener('DOMContentLoaded', function() {
     tailoSwitch();
@@ -76,11 +82,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function buttonSound(){
-    const buttons = document.querySelectorAll('button');
+    const buttons = document.querySelectorAll('.button');
 
     buttons.forEach(button => {
         button.addEventListener('click', function() {
             const soundSrc = button.getAttribute('data-sound');
+            const audio = new Audio(soundSrc);
+            audio.play();
+        });
+    });
+
+    const sounds = document.querySelectorAll('.fa-solid');
+
+    sounds.forEach(sound => {
+        sound.addEventListener('click', function() {
+            const soundSrc = sound.getAttribute('data-sound');
             const audio = new Audio(soundSrc);
             audio.play();
         });
@@ -107,15 +123,16 @@ function tailoSwitch(){
 function loadAlphebet(isTailo){
     let consonantsHtml = "";
     let vowelsHtml = "";
+    let tonesHtml = "";
     for(i = 0; i < consonants.length; i++){
         if(consonants[i].tailo == ""){
             consonantsHtml +=`<div class="empty"></div>`;
         }
         else{
             consonantsHtml +=`
-            <button data-sound="sounds/${consonants[i].tailo}${consonants[i].index}.mp3" class="consonant">
+            <button data-sound="sounds/${consonants[i].tailo}${consonants[i].index}.mp3" class="button consonant">
                 <span class="big-letter">${isTailo? consonants[i].tailo:consonants[i].zhuin}</span>
-                <span class="consonant-small-letter">${isTailo? consonants[i].zhuin:consonants[i].tailo}</span>
+                <span class="small-letter consonant-letter">${isTailo? consonants[i].zhuin:consonants[i].tailo}</span>
             </button>
             `;
         }
@@ -127,12 +144,22 @@ function loadAlphebet(isTailo){
         }
         else{
             vowelsHtml +=`
-            <button data-sound="sounds/${vowels[i].tailo}${vowels[i].index}.mp3" class="vowel">
+            <button data-sound="sounds/${vowels[i].tailo}${vowels[i].index}.mp3" class="button vowel">
                 <span class="big-letter">${isTailo? vowels[i].tailo:vowels[i].zhuin}</span>
-                <span class="vowel-small-letter">${isTailo? vowels[i].zhuin:vowels[i].tailo}</span>
+                <span class="small-letter vowel-letter">${isTailo? vowels[i].zhuin:vowels[i].tailo}</span>
             </button>
             `;
         }
+        
+    }
+    for(i = 0; i < tones.length; i++){
+        tonesHtml +=`
+        <p class="tone-term">第 ${tones[i].index} 調</p>
+        <button data-sound="sounds/${tones[i].tailo}${tones[i].index}.mp3" class="button tone">
+            <span class="big-letter">${isTailo? tones[i].tailo:tones[i].zhuin}</span>
+            <span class="small-letter tone-letter">${isTailo? tones[i].zhuin:tones[i].tailo}</span>
+        </button>
+        `;
         
     }
 
@@ -140,5 +167,6 @@ function loadAlphebet(isTailo){
     
     document.querySelector("#consonants").innerHTML = consonantsHtml;
     document.querySelector("#vowels").innerHTML = vowelsHtml;
+    document.querySelector("#tones").innerHTML = tonesHtml;
     
 }

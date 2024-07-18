@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>台語多鄰國</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b83f2a4877.js" crossorigin="anonymous"></script>
 </head>
 <body>
         <header>
@@ -27,64 +28,87 @@
             <span class="switchLabel">台羅拼音</span>
         </div>
         <div class="button-container">
-            <h2 id="consonant-title">聲母</h2>
+            <h2 class="button-title consonants">聲母</h2>
             <div class="buttons" id="consonants">
 
             </div>
-            <h2 id="vowel-title">韻母</h2>
+            <h2 class="button-title vowels">韻母</h2>
             <div class="buttons" id="vowels">
 
             </div>
-            
         </div>
+        <h2 class="button-title tones">聲調</h2>
+            <div class="buttons" id="tones">
+                
+            </div>
         <a href="https://language.moe.gov.tw/upload/download/jts/01%E6%8B%BC%E9%9F%B3.pdf" target="_blank">
             <p class="info">音檔來源：教育部「咱來學臺灣閩南語」系列《學拼音有撇步》</p>
         </a>
     <h2 class="description-title">快速掌握台語注音</h2>
         <dl class="description-container">
-            <div class="large-description-box">
+            <div class="description-box large">
                 <dt>濁音</dt>
-                <dd>在 ㄅ、ㄍ、ㄐ、ㄗ 加上「<b>圈圈</b>」變成 <b>ㆠ、ㆣ、ㆢ、ㆡ</b> 即為濁音，聲帶先震動再發音。
-                </br>例如：無(ㆠㄜˊ)、五(ㆣㆦ˫)、二(ㆢㄧ˫)、如(ㆡㄨˊ)</dd>
+                <dd>
+                    在 ㄅ、ㄍ、ㄐ、ㄗ 加上「<b>圈圈</b>」變成 <b>ㆠ、ㆣ、ㆢ、ㆡ</b> 即為濁音，聲帶先震動再發音。
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-volume-high" data-sound="description-sounds/bo5.mp3"></i>
+                            無（ㆠㄜˊ）
+                            <i class="fa-solid fa-volume-high" data-sound="description-sounds/bo5.mp3"></i>
+                            五（ㆣㆦ˫）
+                            <i class="fa-solid fa-volume-high" data-sound="description-sounds/bo5.mp3"></i>
+                            <i class="fa-solid fa-volume-high" data-sound="description-sounds/bo5.mp3"></i>
+                        </li>
+                    </ul>
+                </dd>
             </div>
-            <div class="small-description-box">
+            <div class="description-box small">
                 <dt>ㄫ</dt>
                 <dd>羅馬拼音為 ng，作為聲母。
                 </br>例如：硬(ㄫㆤ˫)</dd>    
             </div>
-            <div class="small-description-box">
+            <div class="description-box small">
                 <dt>ㆦ</dt>
                 <dd>與華語注音「ㄛ」的發音類似。
                 </br>例如：芋仔(ㆦ˫ㄚˋ)</dd>    
             </div>
-            <div class="small-description-box">
+            <div class="description-box small">
                 <dt>ㆤ</dt>
                 <dd>與華語注音「ㄝ」的發音類似。
                 </br>例如：鞋仔(ㆤˊㄚˋ)</dd>    
             </div>
-            <div class="small-description-box">
+            <div class="description-box small">
                 <dt></dt>
                 <dd></dd>    
             </div>
-            <div class="large-description-box">
+            <div class="description-box large">
                 <dt>鼻音</dt>
                 <dd>在 ㄧ、ㄨ、ㄚ、ㆦ、ㆤ、ㄞ、ㄠ 加上「<b>圈圈</b>」變成 <b>ㆪ、ㆫ、ㆩ、ㆧ、ㆥ、ㆮ、ㆯ</b> 即為鼻音，好像感冒鼻塞發出的聲音。
                 </br>例如：圓(ㆪˊ)、想(ㄒㄧㆫ˫)、病(ㄅㆥ˫)、歹(ㄆㆮˋ)</dd>    
             </div>
-            <div class="small-description-box">
+            <div class="description-box small">
                 <dt>ㆬ</dt>
                 <dd><b>ㄇ</b> 的韻母化，發音時嘴巴要緊閉。
                 </br>例如：阿姆(ㄚ ㆬˋ)、音(ㄧㆬ)</dd>    
             </div>
-            <div class="small-description-box">
+            <div class="description-box small">
                 <dt>ㆭ</dt>
                 <dd><b>ㄫ</b> 的韻母化，完全用鼻腔發音。
                 </br>例如：黃(ㆭˊ)、園(ㄏㆭˊ)</dd>    
             </div>
+            <div class="description-box large">
+                <dt>ㆬ 和 ㆭ 的延伸</dt>
+                <dd>
+                    <ul>
+                        <li>ㄚ+ㆬ = ㆰ</li>
+                        <li></li>
+                    </ul>
+                </dd>    
+            </div>
         </dl>
     </main>
     <footer>
-        <p>&copy; 2024 Let's learn Taigi</p>
+        <p>&copy; 2024 MilkTseng</p>
     </footer>
     <script src="scripts.js"></script>
 </body>

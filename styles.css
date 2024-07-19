@@ -208,8 +208,8 @@ input:checked + .slider:before {
 
 .tone-term {
     color: white;
-    font-size: 2vw;
-    height: 3vw;
+    font-size: 1.5vw;
+    height: 2vw;
     margin: 0;
 }
 
@@ -251,8 +251,12 @@ input:checked + .slider:before {
 .info {
     color: white;
     text-align: right;
-    text-decoration: underline;
     font-size: 1.3vw;
+}
+
+.info.href {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .description-title {
@@ -283,6 +287,11 @@ input:checked + .slider:before {
     width: 35%;
 }
 
+.description-box.medium {
+    width: 28.5%;
+}
+
+
 .description-box dt {
     font-size: 28px;
     color: white;
@@ -308,8 +317,13 @@ input:checked + .slider:before {
     list-style-type: none;
 }
 
+.description-box dd .example {
+    display: inline-block;
+}
+
 .fa-solid {
     cursor: pointer;
+    color: rgb(80, 211, 80);
 }
 
 footer {
@@ -328,7 +342,7 @@ footer {
         height: 170vw;
         
     }
-    #consonant-title, #vowel-title {
+    .button-title {
         font-size: 5vw;
     }
     .buttons {
@@ -345,7 +359,8 @@ footer {
         height: 18vw;
     }
     .tone-term {
-        font-size: 3vw;
+        font-size: 2.3vw;
+        height: 3vw;
     }
     .button {
         width: 12vw;
@@ -376,7 +391,7 @@ footer {
         flex-direction: column;
         align-content: center;
     }
-    .description-box.large, .description-box.small {
+    .description-box.large, .description-box.small, .description-box.medium {
         width: 80%;
         padding: 20px;
     }

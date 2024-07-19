@@ -130,7 +130,7 @@ function loadAlphebet(isTailo){
         }
         else{
             consonantsHtml +=`
-            <button data-sound="sounds/${consonants[i].tailo}${consonants[i].index}.mp3" class="button consonant">
+            <button data-sound="sounds0/${consonants[i].tailo}${consonants[i].index}.mp3" class="button consonant">
                 <span class="big-letter">${isTailo? consonants[i].tailo:consonants[i].zhuin}</span>
                 <span class="small-letter consonant-letter">${isTailo? consonants[i].zhuin:consonants[i].tailo}</span>
             </button>
@@ -144,7 +144,7 @@ function loadAlphebet(isTailo){
         }
         else{
             vowelsHtml +=`
-            <button data-sound="sounds/${vowels[i].tailo}${vowels[i].index}.mp3" class="button vowel">
+            <button data-sound="sounds0/${vowels[i].tailo}${vowels[i].index}.mp3" class="button vowel">
                 <span class="big-letter">${isTailo? vowels[i].tailo:vowels[i].zhuin}</span>
                 <span class="small-letter vowel-letter">${isTailo? vowels[i].zhuin:vowels[i].tailo}</span>
             </button>
@@ -155,7 +155,7 @@ function loadAlphebet(isTailo){
     for(i = 0; i < tones.length; i++){
         tonesHtml +=`
         <p class="tone-term">第 ${tones[i].index} 調</p>
-        <button data-sound="sounds/${tones[i].tailo}${tones[i].index}.mp3" class="button tone">
+        <button data-sound="sounds0/${tones[i].tailo}${tones[i].index}.mp3" class="button tone">
             <span class="big-letter">${isTailo? tones[i].tailo:tones[i].zhuin}</span>
             <span class="small-letter tone-letter">${isTailo? tones[i].zhuin:tones[i].tailo}</span>
         </button>

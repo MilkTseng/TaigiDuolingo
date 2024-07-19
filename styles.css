@@ -228,6 +228,10 @@ input:checked + .slider:before {
     padding-bottom: 1vw;
 }
 
+.tone .big-letter {
+    font-size: 2vw;
+}
+
 .small-letter {
     position: absolute;
     bottom: 0.2vw;
@@ -236,15 +240,15 @@ input:checked + .slider:before {
     color: darkcyan;
 }
 
-.small-letter.consonant-letter {
+.consonant .small-letter {
     color: darkcyan;
 }
 
-.small-letter.vowel-letter {
+.vowel .small-letter {
     color: firebrick;
 }
 
-.small-letter.tone-letter {
+.tone .small-letter {
     color: forestgreen;
 }
 
@@ -375,6 +379,9 @@ footer {
     .big-letter {
         font-size: 5vw;
         padding-bottom: 2vw;
+    }
+    .tone .big-letter {
+        font-size: 4vw;
     }
     .small-letter {
         bottom: 0.5vw;

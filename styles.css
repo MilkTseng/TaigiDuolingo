@@ -229,7 +229,7 @@ input:checked + .slider:before {
 }
 
 .tone .big-letter {
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
 
 .small-letter {
@@ -380,7 +380,7 @@ footer {
         padding-bottom: 2vw;
     }
     .tone .big-letter {
-        font-size: 2vw;
+        font-size: 3vw;
     }
     .small-letter {
         bottom: 0.5vw;

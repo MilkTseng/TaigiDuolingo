@@ -344,7 +344,6 @@ footer {
     .button-container {
         flex-direction: column;
         height: 170vw;
-        
     }
     .button-title {
         font-size: 5vw;
@@ -381,7 +380,7 @@ footer {
         padding-bottom: 2vw;
     }
     .tone .big-letter {
-        font-size: 4vw;
+        font-size: 2vw;
     }
     .small-letter {
         bottom: 0.5vw;

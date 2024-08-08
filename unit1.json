@@ -1,0 +1,14 @@
+{
+    "section1": [
+        {
+            "type": "listen and choose",
+            "question": "p",
+            "option": ["p", "ph", "m", "b"]
+        },
+        {
+            "type": "listen and choose",
+            "question": "b",
+            "option": ["p", "ph", "m", "b"]
+        }
+    ]
+}

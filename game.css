@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(37, 52, 37);
+    color: white;
+}
+
+.head-section {
+    position: absolute;
+    top: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh 0vh;
+}
+
+.content {
+    position: absolute;
+    top: 20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: rgb(65, 87, 65);
+    border-radius: 5px;
+    width: 80%;
+    margin-right: 20px;
+}
+
+.progress {
+    height: 100%;
+    width: 60%;
+    background-color: forestgreen;
+    border-radius: 5px;
+}
+
+.close-button {
+    cursor: pointer;
+    font-size: 3vh;
+    color: rgb(65, 87, 65);
+}
+
+.close-button:hover {
+    transform: scale(1.05);
+}
+
+.close-button:active {
+    color: rgb(94, 124, 94)
+}
+
+.question-section {
+    width: 100%;
+    font-size: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh 0vh;
+}
+
+.sound-button, .option-button {
+    border: none;
+    border-radius: 3vh;
+    color: white;
+    height: 15vh;
+    width: 15vh;
+    cursor: pointer;
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.option-button:hover, .sound-button:hover {
+    transform: scale(1.05);
+}
+
+.sound-button {
+    background-color: forestgreen;
+}
+
+.sound-button .fa-solid {
+    font-size: 7vh;
+}
+
+.answer-section {
+    width: 100%;
+    display: flex;
+    gap: 5vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 3vh 0vh;
+}
+
+.option-button {
+    background-color: rgb(65, 87, 65);
+    font-size: 7vh;
+    font-weight: bold;
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.reaction-section {
+    background-color: rgb(65, 87, 65);
+}

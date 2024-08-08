@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台語多鄰國</title>
+    <link rel="stylesheet" href="game.css">
+    <script src="https://kit.fontawesome.com/b83f2a4877.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <div class="head-section">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+    
+            <div class="close-button">X</div>
+        </div>
+        <div class="content">
+            <div class="question-section">
+                <p class="question">你聽到什麼？</p>
+                <button class="sound-button" data-letter="p" data-sound="/sounds0/p0.mp3">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+            
+            <div class="answer-section">
+                <button class="option-button" data-letter="p" data-sound="/sounds0/p0.mp3">ㄅ</button>
+                <button class="option-button" data-letter="ph" data-sound="/sounds0/ph0.mp3">ㄆ</button>
+                <button class="option-button" data-letter="m" data-sound="/sounds0/m0.mp3">ㄇ</button>
+                <button class="option-button" data-letter="b" data-sound="/sounds0/b0.mp3">ㆠ</button>
+            </div>    
+        </div>
+
+
+    </div>
+    <script src="game.js"></script>
+
+</body>

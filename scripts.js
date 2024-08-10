@@ -9,7 +9,7 @@ $(document).ready(function() {
         playSound($(this));
     });
     $(".description-box").on("mouseenter mouseleave", function() {
-        showDD($(this));
+        showDescription($(this));
     })
     $("#show-all").on("change", function() {
         $(".description-box").find("dd").slideToggle();
@@ -62,10 +62,10 @@ function loadButtons() {
     })
 }
 
-function showDD(element) {
+function showDescription(element) {
     let isShowAll = $("#show-all").prop("checked");
     if(!isShowAll){
-        element.find("dd").slideToggle();
+        element.find("dd").slideToggle(100);
     }
 }
 

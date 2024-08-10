@@ -2,13 +2,14 @@
     "section1": [
         {
             "type": "listen and choose",
-            "question": "p",
-            "option": ["p", "ph", "m", "b"]
-        },
-        {
-            "type": "listen and choose",
-            "question": "b",
-            "option": ["p", "ph", "m", "b"]
+            "question": {"zhuin": "ㄅ", "tailo": "p", "index": 0},
+            "options": [
+                {"number": 1, "zhuin": "ㄅ", "tailo": "p", "index": 0},
+                {"number": 2, "zhuin": "ㄆ", "tailo": "ph", "index": 0},
+                {"number": 3, "zhuin": "ㄇ", "tailo": "m", "index": 0},
+                {"number": 4, "zhuin": "ㆠ", "tailo": "b", "index": 0}
+            ],
+            "answer": {"number": 1}
         }
     ]
 }

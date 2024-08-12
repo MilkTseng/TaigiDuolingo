@@ -7,11 +7,15 @@ $(document).ready(function() {
             currentNum++;
             console.log(currentNum);
             console.log(questionNum);
+            removeQuestion();
             if(currentNum < questionNum) {
-                loadQuestion(data, currentNum);
+                let question = data.section1[currentNum];
+                loadQuestion(question);
+                loadAnswer(question);
+                $(".content").fadeIn();
             }
         })
-        $(".answer-section").on("click", ".option-button", function() {
+        $(".answer-section").on("click", ".text-sound-button", function() {
             checkAnswer($(this));
         })
     
@@ -28,38 +32,41 @@ function playSound(element) {
     audio.play();
 }
 
-function loadQuestion(data, currentNum) {
-        let q = data.section1[currentNum];
-        if(q.type == "listen and choose") {
-            listenAndChoose(q);
+function removeQuestion() {
+    $(".content").fadeOut();
+    $(".question-section").find(":not(p)").remove();
+    $(".answer-section").children().remove();
+}
+
+function loadQuestion(q) {
+        $(".question").text(q.question);
+        if(q.questionType == "sound button") {
+            let dataAnswer = `data-answer="${q.answer.number}"`;
+            let soundFile = `/sounds0/${q.answer.tailo}${q.answer.index}.mp3`;
+            let questionHTML = soundButtonHTML(soundFile, dataAnswer);
+            $(".question-section").append(questionHTML);
         }
 }
 
-function listenAndChoose(q) {
-    $(".question").text("你聽到什麼？");
-    let answer = `data-answer="${q.answer.number}"`;
-    let soundFile = `/sounds0/${q.question.tailo}${q.question.index}.mp3`;
-    let questionHTML = soundButtonHTML(soundFile, answer);
-    $(".question-section").append(questionHTML);
-    $.each(q.options, function(i, option) {
-        let number = `data-number="${option.number}"`;
-        let soundFile = `/sounds0/${option.tailo}${option.index}.mp3`;
-        let optionHTML = textSoundButtonHTML(option.zhuin, soundFile, number);
-        $(".answer-section").append(optionHTML);
-    })
-    $(".answer-section").find("button").addClass("option-button");
-    
-
+function loadAnswer(q) {
+    if(q.answerType == "text sound option") {
+        $.each(q.options, function(i, option) {
+            let dataNumber = `data-number="${option.number}"`;
+            let soundFile = `/sounds0/${option.tailo}${option.index}.mp3`;
+            let optionHTML = textSoundButtonHTML(option.zhuin, soundFile, dataNumber);
+            $(".answer-section").append(optionHTML);
+        })
+    }
 }
 
-function soundButtonHTML(soundFile, otherProp) {
-    return `<button class="sound-button" data-sound=${soundFile} ${otherProp}>
+function soundButtonHTML(soundFile, otherAttr) {
+    return `<button class="sound-button" data-sound=${soundFile} ${otherAttr}>
                 <i class="fa-solid fa-volume-high"></i>
             </button>`;
 }
 
-function textSoundButtonHTML(text, soundFile, otherProp) {
-    return `<button class="text-sound-button" data-sound=${soundFile} ${otherProp}>${text}</button>`;
+function textSoundButtonHTML(text, soundFile, otherAttr) {
+    return `<button class="text-sound-button" data-sound=${soundFile} ${otherAttr}>${text}</button>`;
 }
 
 function checkAnswer(button) {

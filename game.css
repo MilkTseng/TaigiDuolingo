@@ -69,7 +69,7 @@ body {
     padding: 3vh 0vh;
 }
 
-.sound-button, .option-button {
+.sound-button, .text-sound-button {
     border: none;
     border-radius: 3vh;
     color: white;
@@ -79,15 +79,15 @@ body {
     box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
 }
 
-.option-button:hover, .sound-button:hover {
+.sound-button:hover, .text-sound-button:hover {
     transform: scale(1.05);
 }
 
-.sound-button {
+.question-section .sound-button, .question-section .text-sound-button {
     background-color: forestgreen;
 }
 
-.sound-button .fa-solid {
+.question-section .sound-button .fa-solid {
     font-size: 7vh;
 }
 
@@ -100,7 +100,7 @@ body {
     padding: 3vh 0vh;
 }
 
-.option-button {
+.answer-section .sound-button, .answer-section .text-sound-button {
     background-color: rgb(65, 87, 65);
     font-size: 7vh;
     font-weight: bold;

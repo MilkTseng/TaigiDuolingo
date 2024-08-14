@@ -8,11 +8,16 @@ $(document).ready(function() {
     $(".fa-solid").on("click", function() {
         playSound($(this));
     });
-    $(".description-box").on("mouseenter mouseleave", function() {
+    $(".description-box").on("click", function() {
         showDescription($(this));
     })
     $("#show-all").on("change", function() {
-        $(".description-box").find("dd").slideToggle();
+        if($("#show-all").prop("checked")) {
+            $(".description-box").find("dd").slideDown();
+        }
+        else {
+            $(".description-box").find("dd").slideUp();
+        }
     });
 })
 
@@ -65,102 +70,6 @@ function loadButtons() {
 function showDescription(element) {
     let isShowAll = $("#show-all").prop("checked");
     if(!isShowAll){
-        element.find("dd").slideToggle(100);
+        element.find("dd").slideToggle(200);
     }
 }
-
-/*document.addEventListener('DOMContentLoaded', function() {
-    tailoSwitch();
-    loadAlphebet(false);
-    buttonSound();
-});
-
-function buttonSound(){
-    const buttons = document.querySelectorAll('.button');
-
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            const soundSrc = button.getAttribute('data-sound');
-            const audio = new Audio(soundSrc);
-            audio.play();
-        });
-    });
-
-    const sounds = document.querySelectorAll('.fa-solid');
-
-    sounds.forEach(sound => {
-        sound.addEventListener('click', function() {
-            const soundSrc = sound.getAttribute('data-sound');
-            const audio = new Audio(soundSrc);
-            audio.play();
-        });
-    });
-}
-
-function tailoSwitch(){
-    let isTailo = false;
-    const tailo = document.getElementById('tailo');
-
-    tailo.addEventListener('change', function() {
-        if (tailo.checked){
-            isTailo = true;
-        }
-        else{
-            isTailo = false;
-        }
-        loadAlphebet(isTailo);
-        buttonSound();
-    });
-    
-}
-
-function loadAlphebet(isTailo){
-    let consonantsHtml = "";
-    let vowelsHtml = "";
-    let tonesHtml = "";
-    for(i = 0; i < consonants.length; i++){
-        if(consonants[i].tailo == ""){
-            consonantsHtml +=`<div class="empty"></div>`;
-        }
-        else{
-            consonantsHtml +=`
-            <button data-sound="sounds0/${consonants[i].tailo}${consonants[i].index}.mp3" data-zhuin="${consonants[i].zhuin}" data-tailo="${consonants[i].tailo}" class="button consonant">
-                <span class="big-letter"></span>
-                <span class="small-letter"></span>
-            </button>
-            `;
-        }
-        
-    }
-    for(i = 0; i < vowels.length; i++){
-        if(vowels[i].tailo == ""){
-            vowelsHtml += `<div class="empty"></div>`;
-        }
-        else{
-            vowelsHtml +=`
-            <button data-sound="sounds0/${vowels[i].tailo}${vowels[i].index}.mp3" data-zhuin="${vowels[i].zhuin}" data-tailo="${vowels[i].tailo}" class="button vowel">
-                <span class="big-letter"></span>
-                <span class="small-letter"></span>
-            </button>
-            `;
-        }
-        
-    }
-    for(i = 0; i < tones.length; i++){
-        tonesHtml +=`
-        <p class="tone-term">第 ${tones[i].index} 調</p>
-        <button data-sound="sounds0/${tones[i].tailo}${tones[i].index}.mp3" data-zhuin="${tones[i].zhuin}" data-tailo="${tones[i].tailo}" class="button tone">
-            <span class="big-letter"></span>
-            <span class="small-letter"></span>
-        </button>
-        `;
-        
-    }
-
-    
-    
-    document.querySelector("#consonants").innerHTML = consonantsHtml;
-    document.querySelector("#vowels").innerHTML = vowelsHtml;
-    document.querySelector("#tones").innerHTML = tonesHtml;
-    
-}*/

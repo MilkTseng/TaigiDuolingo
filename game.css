@@ -170,8 +170,20 @@ body {
     cursor: default;
 }
 
-.result-button.confirm, .result-button.next {
+.result-button.confirm {
     background-color: darkcyan;
     color: lightskyblue;
+    cursor: pointer;
+}
+
+.result-button.correct-next {
+    background-color: forestgreen;
+    color: rgb(80, 211, 80);
+    cursor: pointer;
+}
+
+.result-button.wrong-next {
+    background-color: firebrick;
+    color: coral;
     cursor: pointer;
 }

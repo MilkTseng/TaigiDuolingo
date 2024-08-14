@@ -103,6 +103,114 @@
                 {"number": 2, "text": "ㄇ", "sound": "m0"},
                 {"number": 3, "text": "ㆠ", "sound": "b0"}
             ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 9, "sound": "ts0"},
+            "options": [
+                {"number": 9, "text": "ㄐ", "sound": "ts0"},
+                {"number": 10, "text": "ㄑ", "sound": "tsh0"},
+                {"number": 11, "text": "ㄒ", "sound": "s0"},
+                {"number": 12, "text": "ㆢ", "sound": "j0"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 12, "sound": "j0"},
+            "options": [
+                {"number": 9, "text": "ㄐ", "sound": "ts0"},
+                {"number": 10, "text": "ㄑ", "sound": "tsh0"},
+                {"number": 11, "text": "ㄒ", "sound": "s0"},
+                {"number": 12, "text": "ㆢ", "sound": "j0"}
+            ]
+        },
+        {
+            "question": "這個怎麼唸？",
+            "questionType": "text",
+            "answerType": "sound option",
+            "answer": {"number": 12, "text": "ㆢ"},
+            "options": [
+                {"number": 9, "sound": "ts0"},
+                {"number": 10, "sound": "tsh0"},
+                {"number": 11, "sound": "s0"},
+                {"number": 12, "sound": "j0"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button and text",
+            "answerType": "text sound option",
+            "answer": {"number": 12, "buttonText": "字", "text": "__ㄧ˫", "sound": "ji7"},
+            "options": [
+                {"number": 9, "text": "ㄐ", "sound": "ts0"},
+                {"number": 10, "text": "ㄑ", "sound": "tsh0"},
+                {"number": 11, "text": "ㄒ", "sound": "s0"},
+                {"number": 12, "text": "ㆢ", "sound": "j0"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 13, "sound": "ts1"},
+            "options": [
+                {"number": 13, "text": "ㄗ", "sound": "ts1"},
+                {"number": 14, "text": "ㄘ", "sound": "tsh1"},
+                {"number": 15, "text": "ㄙ", "sound": "s1"},
+                {"number": 16, "text": "ㆡ", "sound": "j1"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 16, "sound": "j1"},
+            "options": [
+                {"number": 13, "text": "ㄗ", "sound": "ts1"},
+                {"number": 14, "text": "ㄘ", "sound": "tsh1"},
+                {"number": 15, "text": "ㄙ", "sound": "s1"},
+                {"number": 16, "text": "ㆡ", "sound": "j1"}
+            ]
+        },
+        {
+            "question": "這個怎麼唸？",
+            "questionType": "text",
+            "answerType": "sound option",
+            "answer": {"number": 16, "text": "ㆡ"},
+            "options": [
+                {"number": 13, "sound": "ts1"},
+                {"number": 14, "sound": "tsh1"},
+                {"number": 15, "sound": "s1"},
+                {"number": 16, "sound": "j1"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button and text",
+            "answerType": "text sound option",
+            "answer": {"number": 16, "buttonText": "熱", "text": "__ㄨㄚㆷ̇ ", "sound": "juah8"},
+            "options": [
+                {"number": 13, "text": "ㄗ", "sound": "ts1"},
+                {"number": 14, "text": "ㄘ", "sound": "tsh1"},
+                {"number": 15, "text": "ㄙ", "sound": "s1"},
+                {"number": 16, "text": "ㆡ", "sound": "j1"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button and text",
+            "answerType": "text sound option",
+            "answer": {"number": 13, "buttonText": "紙", "text": "__ㄨㄚˋ", "sound": "tsua2"},
+            "options": [
+                {"number": 13, "text": "ㄗ", "sound": "ts1"},
+                {"number": 14, "text": "ㄘ", "sound": "tsh1"},
+                {"number": 15, "text": "ㄙ", "sound": "s1"},
+                {"number": 16, "text": "ㆡ", "sound": "j1"}
+            ]
         }
     ]
 }

@@ -1,8 +1,8 @@
-let haveResult = false;
+let haveResult = false; // whether the result is out
 
 $(document).ready(function() {
     $.getJSON("./unit1.json", function(data) {
-        let questionNum = data.section1.length; // total number of questions
+        let questionNum = data.section1.length; // the total number of questions
         let currentNum = 0; // the current number of question
         let progress = (currentNum + 1)*100/questionNum; // to change the progress bar
         let sequence = randomSequence(questionNum); // an array with random sequence of number
@@ -11,24 +11,26 @@ $(document).ready(function() {
         loadQuestion(question);
         loadAnswer(question);
         $(".content").fadeIn(200);
-        $(".result-section").on("click",".next", function() {
+        $(".result-section").on("click",".correct-next, .wrong-next", function() {
             $(".content").fadeOut(200, function() {
-                currentNum++;
-                index = sequence[currentNum];
                 removeQuestion();
+                currentNum++;
+                questionNum = sequence.length;
+                index = sequence[currentNum];
                 if(currentNum < questionNum) {
                     let question = data.section1[index];
                     loadQuestion(question);
                     loadAnswer(question);
                     $(".content").fadeIn(200);
                 }
+                else {
+                    window.location.href = "/index.html";
+                }
             })
         })
         $(".answer-section").on("click", ".text-sound-button", function() {
             if(!haveResult) {
-                progress = (currentNum + 1)*100/questionNum;
-                console.log(progress);
-                checkAnswer($(this), progress);
+                checkAnswer($(this), currentNum, questionNum, index, sequence);
             }
                 
         })
@@ -40,7 +42,7 @@ $(document).ready(function() {
             if(!haveResult) {
                 progress = (currentNum + 1)*100/questionNum;
                 console.log(progress);
-                checkAnswer($(".choose"), progress);
+                checkOptionAnswer($(".choose"), progress);
             }
         })
     })
@@ -57,12 +59,17 @@ function playSound(element) {
     audio.play();
 }
 
+function playSoundFile(soundFile) {
+    let audio = new Audio(soundFile);
+    audio.play();
+}
+
 function removeQuestion() {
     $(".question-section").find(":not(.question)").remove();
     $(".answer-section").children().remove();
     $(".result").text("");
-    $(".result").removeClass("correct, wrong");
-    $(".result-button").removeClass("next");
+    $(".result").removeClass("correct wrong");
+    $(".result-button").removeClass("correct-next wrong-next");
     $(".result-button").addClass("unactive");
     haveResult = false;
 }
@@ -129,11 +136,24 @@ function textSoundButtonHTML(text, soundFile, otherAttr) {
     return `<button class="text-sound-button" data-sound=${soundFile} ${otherAttr}>${text}</button>`;
 }
 
-function checkAnswer(button, progress) {
-    answer = $(".question").data("answer");
-    choose = button.data("number");
-    console.log(answer);
-    console.log(choose);
+function checkAnswer(button, currentNum, questionNum, index, sequence) {
+    let isCorrect = checkOptionAnswer(button);
+    let progress = 0;
+    if(isCorrect) {
+        progress = (currentNum + 1)*100/questionNum;
+    }
+    else {
+        sequence.push(index);
+        questionNum++;
+        progress = (currentNum + 1)*100/questionNum;
+    }
+    $(".progress").css("width", progress + "%");
+}
+
+function checkOptionAnswer(button) {
+    let isCorrect = false;
+    let answer = $(".question").data("answer");
+    let choose = button.data("number");
     $(".result-button").removeClass("confirm");
     $(".result-button").removeClass("unactive");
     $(".answer-section").find(".text-sound-button, .sound-button").each(function() {
@@ -142,24 +162,26 @@ function checkAnswer(button, progress) {
         }
     })
     if(choose == answer) {
-        console.log("correct");
+        isCorrect = true;
         $(".result").text("答對了！");
         $(".result").addClass("correct");
+        $(".result-button").addClass("correct-next");
     }
     else {
-        console.log("wrong");
+        isCorrect = false;
         $(".result").text("答錯了！");
         $(".result").addClass("wrong");
         button.addClass("wrong-option");
+        $(".result-button").addClass("wrong-next");
     }
-    $(".result-button").addClass("next");
+    
     $(".result-button").text("繼續");
-    $(".progress").css("width", progress + "%");
     haveResult = true;
+    return isCorrect;
 }
 
 function chooseOption(button) {
-    button.closest(".answer-section").children().removeClass("choose");
+    $(".answer-section").children().removeClass("choose");
     button.addClass("choose");
     $(".result-button").text("確定");
     $(".result-button").removeClass("unactive");

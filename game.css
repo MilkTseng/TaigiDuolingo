@@ -40,7 +40,7 @@ body {
 
 .progress {
     height: 100%;
-    width: 60%;
+    width: 0%;
     background-color: forestgreen;
     border-radius: 5px;
 }
@@ -69,6 +69,12 @@ body {
     padding: 3vh 0vh;
 }
 
+.question-text {
+    text-align: center;
+    font-size: 7vh;
+    margin: 2vh;
+}
+
 .sound-button, .text-sound-button {
     border: none;
     border-radius: 3vh;
@@ -85,6 +91,7 @@ body {
 
 .question-section .sound-button, .question-section .text-sound-button {
     background-color: forestgreen;
+    font-size: 7vh;
 }
 
 .question-section .sound-button .fa-solid {
@@ -107,6 +114,21 @@ body {
     box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
 }
 
+.choose {
+    border: 0.5vh solid;
+    border-color: lightskyblue;
+}
+
+.correct-option {
+    border: 0.5vh solid;
+    border-color: rgb(80, 211, 80);
+}
+
+.wrong-option {
+    border: 0.5vh solid;
+    border-color: coral;
+}
+
 .result-section {
     background-color: rgb(65, 87, 65);
     position: absolute;
@@ -119,20 +141,37 @@ body {
 }
 
 .result {
-    font-size: 3vh;
+    font-size: 4vh;
     font-weight: bold;
-    margin: 3vh;
+    margin: 0vh 5vh;
 }
 
-.next {
-    background-color: rgb(37, 52, 37);
-    color: rgb(65, 87, 65);
+.result.correct {
+    color: rgb(80, 211, 80);
+}
+
+.result.wrong {
+    color: coral;
+}
+
+.result-button {
     width: 20vh;
     height: 8vh;
     font-size: 3vh;
     font-weight: bold;
     border: none;
-    cursor: pointer;
     border-radius: 1vh;
-    margin: 3vh;
+    margin: 0vh 5vh;
+}
+
+.result-button.unactive {
+    background-color: rgb(37, 52, 37);
+    color: rgb(65, 87, 65);
+    cursor: default;
+}
+
+.result-button.confirm, .result-button.next {
+    background-color: darkcyan;
+    color: lightskyblue;
+    cursor: pointer;
 }

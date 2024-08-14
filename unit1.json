@@ -48,24 +48,60 @@
             "question": "你聽到什麼？",
             "questionType": "sound button",
             "answerType": "text sound option",
-            "answer": {"number": 0, "zhuin": "ㄅ", "tailo": "p", "index": 0},
+            "answer": {"number": 0, "sound": "p0"},
             "options": [
-                {"number": 0, "zhuin": "ㄅ", "tailo": "p", "index": 0},
-                {"number": 1, "zhuin": "ㄆ", "tailo": "ph", "index": 0},
-                {"number": 2, "zhuin": "ㄇ", "tailo": "m", "index": 0},
-                {"number": 3, "zhuin": "ㆠ", "tailo": "b", "index": 0}
+                {"number": 0, "text": "ㄅ", "sound": "p0"},
+                {"number": 1, "text": "ㄆ", "sound": "ph0"},
+                {"number": 2, "text": "ㄇ", "sound": "m0"},
+                {"number": 3, "text": "ㆠ", "sound": "b0"}
             ]
         },
         {
             "question": "你聽到什麼？",
             "questionType": "sound button",
             "answerType": "text sound option",
-            "answer": {"number": 3, "zhuin": "ㆠ", "tailo": "b", "index": 0},
+            "answer": {"number": 3, "sound": "b0"},
             "options": [
-                {"number": 0, "zhuin": "ㄅ", "tailo": "p", "index": 0},
-                {"number": 1, "zhuin": "ㄆ", "tailo": "ph", "index": 0},
-                {"number": 2, "zhuin": "ㄇ", "tailo": "m", "index": 0},
-                {"number": 3, "zhuin": "ㆠ", "tailo": "b", "index": 0}
+                {"number": 0, "text": "ㄅ", "sound": "p0"},
+                {"number": 1, "text": "ㄆ", "sound": "ph0"},
+                {"number": 2, "text": "ㄇ", "sound": "m0"},
+                {"number": 3, "text": "ㆠ", "sound": "b0"}
+            ]
+        },
+        {
+            "question": "這個怎麼唸？",
+            "questionType": "text",
+            "answerType": "sound option",
+            "answer": {"number": 3, "text": "ㆠ"},
+            "options": [
+                {"number": 0, "sound": "p0"},
+                {"number": 1, "sound": "ph0"},
+                {"number": 2, "sound": "m0"},
+                {"number": 3, "sound": "b0"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button and text",
+            "answerType": "text sound option",
+            "answer": {"number": 3, "buttonText": "無", "text": "__ㄜˊ", "sound": "bo5"},
+            "options": [
+                {"number": 0, "text": "ㄅ", "sound": "p0"},
+                {"number": 1, "text": "ㄆ", "sound": "ph0"},
+                {"number": 2, "text": "ㄇ", "sound": "m0"},
+                {"number": 3, "text": "ㆠ", "sound": "b0"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button and text",
+            "answerType": "text sound option",
+            "answer": {"number": 0, "buttonText": "婆", "text": "__ㄜˊ", "sound": "po5"},
+            "options": [
+                {"number": 0, "text": "ㄅ", "sound": "p0"},
+                {"number": 1, "text": "ㄆ", "sound": "ph0"},
+                {"number": 2, "text": "ㄇ", "sound": "m0"},
+                {"number": 3, "text": "ㆠ", "sound": "b0"}
             ]
         }
     ]

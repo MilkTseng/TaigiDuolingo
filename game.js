@@ -87,7 +87,7 @@ function loadQuestion(q) {
         if(type == "sound button" || type == "text sound button" || type == "text sound button and text") {
             console.log("soundsound");
             let dataAnswer = `data-answer="${q.answer.number}"`;
-            let soundFile = `/unit1/sounds/${q.answer.sound}.mp3`;
+            let soundFile = `unit1/sounds/${q.answer.sound}.mp3`;
             let questionHTML = "";
             if(type == "sound button") {
                 questionHTML = soundButtonHTML(soundFile, dataAnswer);
@@ -112,7 +112,7 @@ function loadAnswer(q) {
     if(type == "text sound option" || type == "sound option") {
         $.each(q.options, function(i, option) {
             let dataNumber = `data-number="${option.number}"`;
-            let soundFile = `/unit1/sounds/${option.sound}.mp3`;
+            let soundFile = `unit1/sounds/${option.sound}.mp3`;
             if(type == "sound option") {
                 optionHTML = soundButtonHTML(soundFile, dataNumber);
             }

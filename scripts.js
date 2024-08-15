@@ -8,8 +8,8 @@ $(document).ready(function() {
     $(".fa-solid").on("click", function() {
         playSound($(this));
     });
-    $(".description-box").on("click", function() {
-        showDescription($(this));
+    $(".description-box").on("click", "dt", function() {
+        showDescription($(this).closest(".description-box"));
     })
     $("#show-all").on("change", function() {
         if($("#show-all").prop("checked")) {

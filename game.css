@@ -8,6 +8,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: rgb(37, 52, 37);
     color: white;
+    height: 100vh;
 }
 
 .head-section {
@@ -186,10 +187,10 @@ body {
 
 @media (max-width: 700px) {
     .head-section {
-        top: 1.5vh;
+        top: 1vh;
     }
     .content {
-        top: 8vh;
+        top: 5vh;
     }
     .question-section {
         font-size: 3vh;
@@ -204,13 +205,13 @@ body {
     }
     .answer-section {
         width: 35vh;
-        gap: 7vh;
+        gap: 6vh;
     }
     .result-section {
         height: 10vh;
     }
     .result-button {
-        width: 10vh;
+        width: 15vh;
         height: 5vh;
         font-size: 2.5vh;
     }

@@ -24,7 +24,7 @@ $(document).ready(function() {
                     $(".content").fadeIn(200);
                 }
                 else {
-                    window.location.href = "/index.html";
+                    window.location.href = "index.html";
                 }
             })
         })
@@ -40,9 +40,7 @@ $(document).ready(function() {
         })
         $(".result-section").on("click", ".confirm", function() {
             if(!haveResult) {
-                progress = (currentNum + 1)*100/questionNum;
-                console.log(progress);
-                checkOptionAnswer($(".choose"), progress);
+                checkAnswer($(".choose"), currentNum, questionNum, index, sequence);
             }
         })
     })
@@ -50,6 +48,13 @@ $(document).ready(function() {
     $(".question-section, .answer-section").on("click", ".sound-button, .text-sound-button", function() {
         playSound($(this));
     });
+
+    $(".close-button").on("click", function() {
+        let sureToLeave = confirm("確定離開？");
+        if(sureToLeave) {
+            window.location.href = "index.html";
+        }
+    })
     
 })
 

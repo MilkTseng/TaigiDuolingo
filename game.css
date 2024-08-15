@@ -78,6 +78,7 @@ body {
 .sound-button, .text-sound-button {
     border: none;
     border-radius: 3vh;
+    padding: 0;
     color: white;
     height: 15vh;
     width: 15vh;

@@ -1,10 +1,10 @@
 let haveResult = false; // whether the result is out
+let isFirstWrong = true; //whether it is the first wrong answer
 
 $(document).ready(function() {
     $.getJSON("./unit1.json", function(data) {
         let questionNum = data.section1.length; // the total number of questions
         let currentNum = 0; // the current number of question
-        let progress = (currentNum + 1)*100/questionNum; // to change the progress bar
         let sequence = randomSequence(questionNum); // an array with random sequence of number
         let index = sequence[currentNum]; // the question number in json
         let question = data.section1[index];
@@ -17,8 +17,14 @@ $(document).ready(function() {
                 currentNum++;
                 questionNum = sequence.length;
                 index = sequence[currentNum];
-                if(currentNum < questionNum) {
-                    let question = data.section1[index];
+                if(index == -1) {
+                    $(".question").text("複習錯題");
+                    $(".result-button").removeClass("unactive");
+                    $(".result-button").addClass("correct-next");
+                    $(".content").fadeIn(200);
+                }
+                else if(currentNum < questionNum) {
+                    question = data.section1[index];
                     loadQuestion(question);
                     loadAnswer(question);
                     $(".content").fadeIn(200);
@@ -83,9 +89,7 @@ function loadQuestion(q) {
         $(".question").text(q.question);
         $(".question").data("answer", q.answer.number);
         let type = q.questionType;
-        console.log(type);
         if(type == "sound button" || type == "text sound button" || type == "text sound button and text") {
-            console.log("soundsound");
             let dataAnswer = `data-answer="${q.answer.number}"`;
             let soundFile = `unit1/sounds/${q.answer.sound}.mp3`;
             let questionHTML = "";
@@ -101,7 +105,6 @@ function loadQuestion(q) {
             playSound($(".text-sound-button"));
         }
         if(type == "text" || type == "text sound button and text") {
-            console.log("texttext");
             $(".question-content").append(`<p class="question-text">${q.answer.text}</p>`)
         }
 }
@@ -144,14 +147,15 @@ function textSoundButtonHTML(text, soundFile, otherAttr) {
 function checkAnswer(button, currentNum, questionNum, index, sequence) {
     let isCorrect = checkOptionAnswer(button);
     let progress = 0;
-    if(isCorrect) {
-        progress = (currentNum + 1)*100/questionNum;
-    }
-    else {
+    if(!isCorrect) {
+        if(isFirstWrong) {
+            sequence.push(-1); // add a page to separate the wrong questions
+            isFirstWrong = false;
+        }
         sequence.push(index);
         questionNum++;
-        progress = (currentNum + 1)*100/questionNum;
     }
+    progress = (currentNum + 1)*100/questionNum;
     $(".progress").css("width", progress + "%");
 }
 
@@ -163,7 +167,7 @@ function checkOptionAnswer(button) {
     $(".result-button").removeClass("unactive");
     $(".answer-section").find(".text-sound-button, .sound-button").each(function() {
         if($(this).data("number") == answer) {
-            $(this).addClass("correct-option");
+            $(this).addClass("correct-option"); // add green border
         }
     })
     if(choose == answer) {
@@ -176,7 +180,7 @@ function checkOptionAnswer(button) {
         isCorrect = false;
         $(".result").text("答錯了！");
         $(".result").addClass("wrong");
-        button.addClass("wrong-option");
+        button.addClass("wrong-option"); // add red border
         $(".result-button").addClass("wrong-next");
     }
     
@@ -187,7 +191,7 @@ function checkOptionAnswer(button) {
 
 function chooseOption(button) {
     $(".answer-section").children().removeClass("choose");
-    button.addClass("choose");
+    button.addClass("choose"); // add blue border
     $(".result-button").text("確定");
     $(".result-button").removeClass("unactive");
     $(".result-button").addClass("confirm");
@@ -196,12 +200,15 @@ function chooseOption(button) {
 function randomSequence(n) {
     let array = [];
     for(let i = 0; i < n; i++) {
-        if(Math.random() < 0.5) {
-            array.push(i);
-        }
-        else {
-            array.unshift(i);
-        }
+        array.push(i);
     }
+    // Fisher Yates Method
+    for (let i = array.length -1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i+1));
+        let k = array[i];
+        array[i] = array[j];
+        array[j] = k;
+    }
+    console.log(array);
     return array;
 }

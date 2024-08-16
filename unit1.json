@@ -82,9 +82,9 @@
         },
         {
             "question": "你聽到什麼？",
-            "questionType": "text sound button and text",
+            "questionType": "text sound button",
             "answerType": "text sound option",
-            "answer": {"number": 3, "buttonText": "無", "text": "__ㄜˊ", "sound": "bo5"},
+            "answer": {"number": 3, "buttonText": "<ruby>無<rt>？ㄜˊ</rt></ruby>", "sound": "bo5"},
             "options": [
                 {"number": 0, "text": "ㄅ", "sound": "p0"},
                 {"number": 1, "text": "ㄆ", "sound": "ph0"},
@@ -94,9 +94,9 @@
         },
         {
             "question": "你聽到什麼？",
-            "questionType": "text sound button and text",
+            "questionType": "text sound button",
             "answerType": "text sound option",
-            "answer": {"number": 0, "buttonText": "婆", "text": "__ㄜˊ", "sound": "po5"},
+            "answer": {"number": 0, "buttonText": "<ruby>婆<rt>？ㄜˊ</rt></ruby>", "sound": "po5"},
             "options": [
                 {"number": 0, "text": "ㄅ", "sound": "p0"},
                 {"number": 1, "text": "ㄆ", "sound": "ph0"},
@@ -142,9 +142,9 @@
         },
         {
             "question": "你聽到什麼？",
-            "questionType": "text sound button and text",
+            "questionType": "text sound button",
             "answerType": "text sound option",
-            "answer": {"number": 12, "buttonText": "字", "text": "__ㄧ˫", "sound": "ji7"},
+            "answer": {"number": 12, "buttonText": "<ruby>字<rt>？ㄧ˫</rt></ruby>", "sound": "ji7"},
             "options": [
                 {"number": 9, "text": "ㄐ", "sound": "ts0"},
                 {"number": 10, "text": "ㄑ", "sound": "tsh0"},
@@ -190,9 +190,9 @@
         },
         {
             "question": "你聽到什麼？",
-            "questionType": "text sound button and text",
+            "questionType": "text sound button",
             "answerType": "text sound option",
-            "answer": {"number": 16, "buttonText": "熱", "text": "__ㄨㄚㆷ̇ ", "sound": "juah8"},
+            "answer": {"number": 16, "buttonText": "<ruby>熱<rt>？ㄨㄚㆷ˙</rt></ruby>", "sound": "juah8"},
             "options": [
                 {"number": 13, "text": "ㄗ", "sound": "ts1"},
                 {"number": 14, "text": "ㄘ", "sound": "tsh1"},
@@ -202,9 +202,9 @@
         },
         {
             "question": "你聽到什麼？",
-            "questionType": "text sound button and text",
+            "questionType": "text sound button",
             "answerType": "text sound option",
-            "answer": {"number": 13, "buttonText": "紙", "text": "__ㄨㄚˋ", "sound": "tsua2"},
+            "answer": {"number": 13, "buttonText": "<ruby>紙<rt>？ㄨㄚˋ</rt></ruby>", "sound": "tsua2"},
             "options": [
                 {"number": 13, "text": "ㄗ", "sound": "ts1"},
                 {"number": 14, "text": "ㄘ", "sound": "tsh1"},

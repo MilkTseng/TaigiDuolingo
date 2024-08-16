@@ -70,7 +70,7 @@ function playSoundFile(soundFile) {
 }
 
 function removeQuestion() {
-    $(".question-section").find(":not(.question)").remove();
+    $(".question-content").children().remove();
     $(".answer-section").children().remove();
     $(".result").text("");
     $(".result").removeClass("correct wrong");
@@ -96,13 +96,13 @@ function loadQuestion(q) {
                 let text = q.answer.buttonText;
                 questionHTML = textSoundButtonHTML(text, soundFile, dataAnswer);
             }
-            $(".question-section").append(questionHTML);
+            $(".question-content").append(questionHTML);
             playSound($(".sound-button"));
             playSound($(".text-sound-button"));
         }
         if(type == "text" || type == "text sound button and text") {
             console.log("texttext");
-            $(".question-section").append(`<p class="question-text">${q.answer.text}</p>`)
+            $(".question-content").append(`<p class="question-text">${q.answer.text}</p>`)
         }
 }
 

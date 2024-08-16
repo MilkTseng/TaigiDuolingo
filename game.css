@@ -11,6 +11,21 @@ body {
     height: 100vh;
 }
 
+@font-face { 
+    font-family: BopomofoRuby;
+    src: url(/Bopomofo_on_Web-master/font/BopomofoRuby1909-v1-Regular.ttf);
+}
+
+rt {
+    font-family: BopomofoRuby;
+    font-feature-settings: "vert";
+    text-orientation: upright;
+    font-size: 40%;
+    letter-spacing: 0;
+    ruby-align: center;
+    text-align: center;
+}
+
 .head-section {
     position: absolute;
     top: 5vh;
@@ -74,18 +89,32 @@ body {
     text-align: center;
     font-size: 7vh;
     margin: 2vh;
+    border: 0.5vh solid;
+    padding: 1vh;
+    border-color: rgb(65, 87, 65);
+    border-radius: 2vh;
+    color: white;
+}
+
+.question-content {
+    display: flex;
+    flex-direction: row;
 }
 
 .sound-button, .text-sound-button {
     border: none;
     border-radius: 3vh;
-    padding: 0;
+    padding: 3vh;
     color: white;
-    height: 15vh;
-    width: 15vh;
     font-size: 7vh;
+    writing-mode: vertical-rl;
     cursor: pointer;
     box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.text-sound-button ruby {
+    position: relative;
+    left: -1vh;
 }
 
 .sound-button:hover, .text-sound-button:hover {
@@ -199,19 +228,18 @@ body {
         font-size: 5vh;
     }
     .sound-button, .text-sound-button {
-        width: 13vh;
-        height: 13vh;
         font-size: 6vh;
+        padding: 2.5vh;
     }
     .answer-section {
-        width: 35vh;
+        width: 45vh;
         gap: 6vh;
     }
     .result-section {
         height: 10vh;
     }
     .result-button {
-        width: 15vh;
+        width: 13vh;
         height: 5vh;
         font-size: 2.5vh;
     }

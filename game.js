@@ -2,15 +2,21 @@ let haveResult = false; // whether the result is out
 let isFirstWrong = true; //whether it is the first wrong answer
 
 $(document).ready(function() {
-    $.getJSON("./unit1.json", function(data) {
-        let questionNum = data.section1.length; // the total number of questions
+    let unit = localStorage.getItem("unit");
+    let section = localStorage.getItem("section");
+    let part = localStorage.getItem("part");
+    part++; // move to the next part
+
+    $.getJSON(`unit${unit}/questions.json`, function(data) {
+        let questionNum = data[`section${section}`][`part${part}`].length; // the total number of questions
         let currentNum = 0; // the current number of question
         let sequence = randomSequence(questionNum); // an array with random sequence of number
         let index = sequence[currentNum]; // the question number in json
-        let question = data.section1[index];
+        let question = data[`section${section}`][`part${part}`][index];
         loadQuestion(question);
         loadAnswer(question);
         $(".content").fadeIn(200);
+
         $(".result-section").on("click",".correct-next, .wrong-next", function() {
             $(".content").fadeOut(200, function() {
                 removeQuestion();
@@ -30,6 +36,7 @@ $(document).ready(function() {
                     $(".content").fadeIn(200);
                 }
                 else {
+                    localStorage.setItem("part", part);
                     window.location.href = "index.html";
                 }
             })
@@ -58,7 +65,7 @@ $(document).ready(function() {
     $(".close-button").on("click", function() {
         let sureToLeave = confirm("確定離開？");
         if(sureToLeave) {
-            window.location.href = "index.html";
+            window.location.href = "lobby.html";
         }
     })
     

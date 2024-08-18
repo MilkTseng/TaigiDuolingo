@@ -1,0 +1,24 @@
+{
+    "units": [
+        {
+            "unitName": "單元一 台語注音",
+            "sections": [
+                {"name": "聲母", "partNum": 3},
+                {"name": "ㆦ、ㆤ 與鼻音", "partNum": 3},
+                {"name": "ㆬ 與 ㆭ", "partNum": 2},
+                {"name": "聲調", "partNum": 5},
+                {"name": "入聲", "partNum": 2}
+            ]
+        },
+        {
+            "unitName": "單元二 變調規則",
+            "sections": [
+                {"name": "一般變調", "partNum": 5},
+                {"name": "輕聲", "partNum": 1},
+                {"name": "仔前變調", "partNum": 1},
+                {"name": "隨前變調", "partNum": 1},
+                {"name": "數字", "partNum": 1}
+            ]
+        }
+    ]
+}

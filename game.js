@@ -5,14 +5,22 @@ $(document).ready(function() {
     let unit = localStorage.getItem("unit");
     let section = localStorage.getItem("section");
     let part = localStorage.getItem("part");
-    part++; // move to the next part
-
-    $.getJSON(`unit${unit}/questions.json`, function(data) {
-        let questionNum = data[`section${section}`][`part${part}`].length; // the total number of questions
+    if(part != "review") {
+        part++; // move to the next part
+    }
+    $.getJSON(`unit${unit}/section${section}.json`, function(data) {
+        let questions;
+        if(part != "review") {
+            questions = data[`part${part}`];
+        }
+        else {
+            questions = data.review;
+        }
+        let questionNum = questions.length; // the total number of questions
         let currentNum = 0; // the current number of question
         let sequence = randomSequence(questionNum); // an array with random sequence of number
         let index = sequence[currentNum]; // the question number in json
-        let question = data[`section${section}`][`part${part}`][index];
+        let question = questions[index];
         loadQuestion(question);
         loadAnswer(question);
         $(".content").fadeIn(200);
@@ -30,14 +38,16 @@ $(document).ready(function() {
                     $(".content").fadeIn(200);
                 }
                 else if(currentNum < questionNum) {
-                    question = data.section1[index];
+                    question = questions[index];
                     loadQuestion(question);
                     loadAnswer(question);
                     $(".content").fadeIn(200);
                 }
                 else {
-                    localStorage.setItem("part", part);
-                    window.location.href = "index.html";
+                    if(part != "review") {
+                        localStorage.setItem("currentPart", part);
+                    }
+                    window.location.href = "lobby.html";
                 }
             })
         })

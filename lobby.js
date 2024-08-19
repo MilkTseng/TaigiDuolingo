@@ -1,9 +1,13 @@
 
 $(document).ready(function() {
-    localStorage.setItem("currentUnit", 2);
-    localStorage.setItem("currentSection", 1);
-    localStorage.setItem("currentPart", 5);
+    
     $.getJSON("./lobby.json", function(data) {
+        if(!localStorage.getItem("currentUnit")) {
+            localStorage.setItem("currentUnit", 1);
+            localStorage.setItem("currentSection", 1);
+            localStorage.setItem("currentPart", 0);
+        }
+
         // load units
         $.each(data.units, function(i, unit) {
             $(".courses-container").append(unitHTML(unit, i+1));
@@ -12,34 +16,35 @@ $(document).ready(function() {
                 sections.append(sectionHTML(section, j+1));
             })
         })
+
         let currentUnit = localStorage.getItem("currentUnit");
         let currentSection = localStorage.getItem("currentSection");
         let currentPart = localStorage.getItem("currentPart");
-        adjustProgress(currentUnit, currentSection, currentPart);
-        currentUnit = localStorage.getItem("currentUnit");
-        currentSection = localStorage.getItem("currentSection");
-        currentPart = localStorage.getItem("currentPart");
         updateProgress(currentUnit, currentSection, currentPart);
-        $(".course-section").filter(".finished-section, .current-section").on("click", function() {
+
+        $(".course-section").filter(".current-section").on("click", function() {
             let chosenUnit = $(this).closest(".course-unit").data("unit");
             let chosenSection = $(this).data("section");
-            let part = $(this).find(".section-progress").data("part");
-            let parts = $(this).find(".section-progress-bar").data("parts")
             localStorage.setItem("unit", chosenUnit);
             localStorage.setItem("section", chosenSection);
-            /*if(part < parts) {
-                localStorage.setItem("part", part);
-            }
-            else {
-                localStorage.setItem("part", "review");
-            }*/
+            localStorage.setItem("part", currentPart);
             window.location.href = "game.html";
         })
+        $(".course-section").filter(".finished-section").on("click", function() {
+            let chosenUnit = $(this).closest(".course-unit").data("unit");
+            let chosenSection = $(this).data("section");
+            localStorage.setItem("unit", chosenUnit);
+            localStorage.setItem("section", chosenSection);
+            localStorage.setItem("part", "review");
+            window.location.href = "game.html";
+        })
+
     })
 
 })
 
-function adjustProgress(currentUnit, currentSection, currentPart) {
+function updateProgress(currentUnit, currentSection, currentPart) {
+    // adjust progress
     let unit;
     $(".course-unit").each(function() {
         if($(this).data("unit") == currentUnit)
@@ -52,23 +57,19 @@ function adjustProgress(currentUnit, currentSection, currentPart) {
             section = $(this);
     })
     let parts = section.find(".section-progress-bar").data("parts");
-   //let part = section.find(".section-progress").data("part");
-   let part = currentPart;
-    console.log(part);
-    console.log(parts);
-    if(part == parts) {
+    if(currentPart == parts) {
         currentSection++;
         localStorage.setItem("currentSection", currentSection);
         if(currentSection > sections) {
             currentUnit++;
             localStorage.setItem("currentUnit", currentUnit);
+            currentSection = 1;
             localStorage.setItem("currentSection", 1);
         }
+        currentPart = 0;
         localStorage.setItem("currentPart", 0);
     }
-}
-
-function updateProgress(currentUnit, currentSection, currentPart) {
+    // change css
     $(".course-unit").each(function() {
         if($(this).data("unit") < currentUnit) {
             $(this).find(".section-name").css("background-color", "coral");
@@ -89,9 +90,8 @@ function updateProgress(currentUnit, currentSection, currentPart) {
                     }
                     else {
                         $(this).addClass("current-section");
-                        let totalPart = $(this).find(".section-progress-bar").data("parts");
-                        let part = currentPart;
-                        let progress = part * 100 / totalPart;
+                        let totalParts = $(this).find(".section-progress-bar").data("parts");
+                        let progress = currentPart * 100 / totalParts;
                         $(this).find(".section-progress").css("width", progress + "%");
                     }
                 }
@@ -116,7 +116,7 @@ function sectionHTML(section, num) {
     return `<div class="course-section" data-section="${num}">
         <div class="section-name">${section.name}</div>
         <div class="section-progress-bar" data-parts="${section.partNum}">
-            <div class="section-progress" data-part="0"></div>
+            <div class="section-progress"></div>
         </div>
     </div>`
 }

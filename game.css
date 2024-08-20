@@ -219,10 +219,11 @@ rt {
         top: 1vh;
     }
     .content {
-        top: 5vh;
+        top: 10vh;
     }
     .question-section {
         font-size: 3vh;
+        padding-top: 0vh;
     }
     .question-text {
         font-size: 5vh;

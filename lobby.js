@@ -16,6 +16,9 @@ $(document).ready(function() {
                 sections.append(sectionHTML(section, j+1));
             })
         })
+        $(".unit-title").each(function() {
+            $(this).css("color", color($(this).closest(".course-unit").data("unit")));
+        })
 
         let currentUnit = localStorage.getItem("currentUnit");
         let currentSection = localStorage.getItem("currentSection");
@@ -37,6 +40,11 @@ $(document).ready(function() {
             localStorage.setItem("section", chosenSection);
             localStorage.setItem("part", "review");
             window.location.href = "game.html";
+        })
+        $(".course-section").on("click", function() {
+            if(!$(this).data("open")) {
+                alert("尚未開放");
+            }
         })
 
     })
@@ -72,7 +80,7 @@ function updateProgress(currentUnit, currentSection, currentPart) {
     // change css
     $(".course-unit").each(function() {
         if($(this).data("unit") < currentUnit) {
-            $(this).find(".section-name").css("background-color", "coral");
+            $(this).find(".section-name").css("background-color", color($(this).data("unit")));
             $(this).find(".section-name").css("color", "black");
             $(this).find(".section-name").css("cursor", "pointer");
             $(this).find(".course-section").addClass("finished-section");
@@ -80,8 +88,8 @@ function updateProgress(currentUnit, currentSection, currentPart) {
         }
         else if($(this).data("unit") == currentUnit) {
             $(this).find(".course-section").each(function() {
-                if($(this).data("section") <= currentSection) {
-                    $(this).find(".section-name").css("background-color", "coral");
+                if($(this).data("section") <= currentSection && $(this).data("open")) {
+                    $(this).find(".section-name").css("background-color", color($(this).closest(".course-unit").data("unit")));
                     $(this).find(".section-name").css("color", "black");
                     $(this).find(".section-name").css("cursor", "pointer");
                     if($(this).data("section") < currentSection) {
@@ -113,10 +121,25 @@ function unitHTML(unit, num) {
 }
 
 function sectionHTML(section, num) {
-    return `<div class="course-section" data-section="${num}">
+    return `<div class="course-section" data-section="${num}" data-open="${section.isOpen}">
         <div class="section-name">${section.name}</div>
         <div class="section-progress-bar" data-parts="${section.partNum}">
             <div class="section-progress"></div>
         </div>
     </div>`
+}
+
+function color(unit) {
+    if(unit % 4 == 1) {
+        return "coral";
+    }
+    else if(unit % 4 == 2) {
+        return "khaki";
+    }
+    else if(unit % 4 == 3) {
+        return "yellowgreen";
+    }
+    else {
+        return "lightskyblue";
+    }
 }

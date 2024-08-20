@@ -74,7 +74,6 @@ main {
     text-align: center;
     font-size: 1.5em;
     padding-bottom: 0.5em;
-    color: coral;
 }
 
 .section-container {
@@ -113,11 +112,17 @@ main {
 }
 
 footer {
-    font-size: 1.5vw;
+    font-size: 1em;
     text-align: center;
     padding: 0.5em 0;
     background-color: rgb(65, 87, 65);
     color: white;
     width: 100%;
     bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .course-unit {
+        width: 95%;
+    }
 }

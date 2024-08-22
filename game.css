@@ -16,6 +16,10 @@ body {
     src: url(font/BopomofoRuby1909-v1-Regular.ttf);
 }
 
+ruby {
+    font-family: tauhu-oo, PingFangTC-Regular, "Microsoft JhengHei", sans-serif;
+}
+
 rt {
     font-family: BopomofoRuby;
     font-feature-settings: "vert";

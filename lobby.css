@@ -118,8 +118,6 @@ footer {
     background-color: rgb(65, 87, 65);
     color: white;
     width: 100%;
-    bottom: 0;
-    position: absolute;
 }
 
 @media (max-width: 700px) {

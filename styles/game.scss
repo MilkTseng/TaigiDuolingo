@@ -13,7 +13,7 @@ body {
 
 @font-face { 
     font-family: BopomofoRuby;
-    src: url(font/BopomofoRuby1909-v1-Regular.ttf);
+    src: url(../font/BopomofoRuby1909-v1-Regular.ttf);
 }
 
 ruby {
@@ -237,7 +237,7 @@ rt {
         padding: 2.5vh;
     }
     .answer-section {
-        width: 45vh;
+        width: 40vh;
         gap: 6vh;
     }
     .result-section {

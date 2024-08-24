@@ -1,3 +1,8 @@
+$BGColor: rgb(37, 52, 37);
+$lightBGColor: rgb(65, 87, 65);
+$lighterBGColor: rgb(94, 124, 94);
+$boldColor: rgb(80, 211, 80);
+
 * {
     box-sizing: border-box;
 }
@@ -6,7 +11,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: rgb(37, 52, 37);
+    background-color: $BGColor;
     color: white;
     height: 100vh;
 }
@@ -53,7 +58,7 @@ rt {
 
 .progress-bar {
     height: 10px;
-    background-color: rgb(65, 87, 65);
+    background-color: $lightBGColor;
     border-radius: 5px;
     width: 80%;
     margin-right: 20px;
@@ -96,7 +101,7 @@ rt {
     margin: 2vh;
     border: 0.5vh solid;
     padding: 1vh;
-    border-color: rgb(65, 87, 65);
+    border-color: $lightBGColor;
     border-radius: 2vh;
     color: white;
 }
@@ -139,7 +144,7 @@ rt {
 }
 
 .answer-section .sound-button, .answer-section .text-sound-button {
-    background-color: rgb(65, 87, 65);
+    background-color: $lightBGColor;
     font-weight: bold;
     box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
 }
@@ -151,7 +156,7 @@ rt {
 
 .correct-option {
     border: 0.5vh solid;
-    border-color: rgb(80, 211, 80);
+    border-color: $boldColor;
 }
 
 .wrong-option {
@@ -160,7 +165,7 @@ rt {
 }
 
 .result-section {
-    background-color: rgb(65, 87, 65);
+    background-color: $lightBGColor;
     position: absolute;
     bottom: 0;
     display: flex;
@@ -177,7 +182,7 @@ rt {
 }
 
 .result.correct {
-    color: rgb(80, 211, 80);
+    color: $boldColor;
 }
 
 .result.wrong {
@@ -195,8 +200,8 @@ rt {
 }
 
 .result-button.unactive {
-    background-color: rgb(37, 52, 37);
-    color: rgb(65, 87, 65);
+    background-color: $BGColor;
+    color: $lightBGColor;
     cursor: default;
 }
 
@@ -208,7 +213,7 @@ rt {
 
 .result-button.correct-next {
     background-color: forestgreen;
-    color: rgb(80, 211, 80);
+    color: $boldColor;
     cursor: pointer;
 }
 

@@ -1,6 +1,5 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -18,17 +17,13 @@ body {
 }
 ruby {
   font-family: tauhu-oo, PingFangTC-Regular, "Microsoft JhengHei", sans-serif;
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
 }
 
 rt {
   font-family: BopomofoRuby;
-  -webkit-font-feature-settings: "vert";
-          font-feature-settings: "vert";
-  -webkit-text-orientation: upright;
-          text-orientation: upright;
+  font-feature-settings: "vert";
+  text-orientation: upright;
   font-size: 40%;
   letter-spacing: 0;
   ruby-align: center;
@@ -39,15 +34,9 @@ rt {
   position: absolute;
   top: 5vh;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   padding: 3vh 0vh;
 }
 
@@ -55,19 +44,10 @@ rt {
   position: absolute;
   top: 15vh;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .progress-bar {
@@ -92,8 +72,7 @@ rt {
 }
 
 .close-button:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .close-button:active {
@@ -103,19 +82,10 @@ rt {
 .question-section {
   width: 100%;
   font-size: 4vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 3vh 0vh;
 }
 
@@ -131,13 +101,8 @@ rt {
 }
 
 .question-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .sound-button, .text-sound-button {
@@ -147,8 +112,8 @@ rt {
   color: white;
   font-size: 7vh;
   cursor: pointer;
-  -webkit-box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+  writing-mode: vertical-rl;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
 }
 
 .text-sound-button ruby {
@@ -157,8 +122,7 @@ rt {
 }
 
 .sound-button:hover, .text-sound-button:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .question-section .sound-button, .question-section .text-sound-button {
@@ -167,23 +131,17 @@ rt {
 
 .answer-section {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 5vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 3vh 0vh;
 }
 
 .answer-section .sound-button, .answer-section .text-sound-button {
   background-color: rgb(65, 87, 65);
   font-weight: bold;
-  -webkit-box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
 }
 
 .choose {
@@ -205,15 +163,9 @@ rt {
   background-color: rgb(65, 87, 65);
   position: absolute;
   bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   height: 15vh;
   width: 100%;
 }

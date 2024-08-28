@@ -8,7 +8,7 @@ $(document).ready(function() {
     if(part != "review") {
         part++; // move to the next part
     }
-    $.getJSON(`unit${unit}/section${section}.json`, function(data) {
+    $.getJSON(`../unit${unit}/section${section}.json`, function(data) {
         let questions;
         if(part != "review") {
             questions = data[`part${part}`];

@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
     
-    $.getJSON("./lobby.json", function(data) {
+    $.getJSON("../jsons/lobby.json", function(data) {
         if(!localStorage.getItem("currentUnit")) {
             localStorage.setItem("currentUnit", 1);
             localStorage.setItem("currentSection", 1);

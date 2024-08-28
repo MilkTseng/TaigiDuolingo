@@ -51,7 +51,7 @@ function playSound(element) {
 }
 
 function loadButtons() {
-    $.getJSON("./alphabets.json", function(data) {
+    $.getJSON("../jsons/alphabets.json", function(data) {
         $.each(data.consonants, function(i, letter)  {
             let HTML = buttonHTML(letter.zhuin, letter.tailo, letter.index, "consonant");
             $("#consonants").append(HTML);

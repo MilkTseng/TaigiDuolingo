@@ -1,0 +1,42 @@
+$BGColor: rgb(37, 52, 37);
+$lightBGColor: rgb(65, 87, 65);
+$lighterBGColor: rgb(94, 124, 94);
+$boldColor: rgb(80, 211, 80);
+
+header {
+    width: 100%;
+    background-color: forestgreen;
+    color: white;
+    text-align: center;
+    padding: 1px 0;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: $lightBGColor;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: $lighterBGColor;
+}

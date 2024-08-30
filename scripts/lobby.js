@@ -31,7 +31,7 @@ $(document).ready(function() {
             localStorage.setItem("unit", chosenUnit);
             localStorage.setItem("section", chosenSection);
             localStorage.setItem("part", currentPart);
-            window.location.href = "game.html";
+            window.location.href = "intro.html";
         })
         $(".course-section").filter(".finished-section").on("click", function() {
             let chosenUnit = $(this).closest(".course-unit").data("unit");

@@ -4,7 +4,7 @@
             "unitName": "單元一 台語注音",
             "sections": [
                 {"name": "聲母", "partNum": 3, "isOpen": true},
-                {"name": "ㆦ、ㆤ 與鼻音", "partNum": 3, "isOpen": false},
+                {"name": "ㆦ、ㆤ 與鼻音", "partNum": 3, "isOpen": true},
                 {"name": "ㆬ 與 ㆭ", "partNum": 2, "isOpen": false},
                 {"name": "聲調", "partNum": 5, "isOpen": false},
                 {"name": "入聲", "partNum": 2, "isOpen": false}

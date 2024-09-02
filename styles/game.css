@@ -20,7 +20,7 @@ ruby {
   writing-mode: vertical-lr;
 }
 
-rt {
+ruby rt {
   font-family: BopomofoRuby;
   font-feature-settings: "vert";
   text-orientation: upright;
@@ -28,6 +28,10 @@ rt {
   letter-spacing: 0;
   ruby-align: center;
   text-align: center;
+}
+
+rt {
+  font-family: BopomofoRuby;
 }
 
 .head-section {

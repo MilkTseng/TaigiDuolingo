@@ -1,0 +1,87 @@
+{
+    "wordBank": [
+        {"number": 0, "zhuin": "ㄧ", "tailo": "i", "index": 0},
+        {"number": 1, "zhuin": "ㄨ", "tailo": "u", "index": 0},
+        {"number": 2, "zhuin": "ㆪ", "tailo": "inn", "index": 0},
+        {"number": 3, "zhuin": "ㆫ", "tailo": "unn", "index": 0},
+        {"number": 4, "zhuin": "ㄚ", "tailo": "a", "index": 0},
+        {"number": 5, "zhuin": "ㆦ", "tailo": "oo", "index": 0},
+        {"number": 6, "zhuin": "ㄛ", "tailo": "o", "index": null},
+        {"number": 7, "zhuin": "ㄜ", "tailo": "o", "index": 0},
+        {"number": 8, "zhuin": "ㆤ", "tailo": "e", "index": 0},
+        {"number": 9, "zhuin": "ㄝ", "tailo": null, "index": null},
+        {"number": 10, "zhuin": "ㄟ", "tailo": null, "index": null},
+        {"number": 11, "zhuin": "ㄞ", "tailo": "ai", "index": 0},
+        {"number": 12, "zhuin": "ㄠ", "tailo": "au", "index": 0},
+        {"number": 13, "zhuin": "ㆩ", "tailo": "ann", "index": 0},
+        {"number": 14, "zhuin": "ㆧ", "tailo": "onn", "index": 0},
+        {"number": 15, "zhuin": "ㆥ", "tailo": "enn", "index": 0},
+        {"number": 16, "zhuin": "ㆮ", "tailo": "ainn", "index": 0},
+        {"number": 17, "zhuin": "ㆯ", "tailo": "aunn", "index": 0}
+    ],
+    "part1": [
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 5, "buttonText": "<ruby>烏<rt>？</rt></ruby>", "sound": "oo1"},
+            "options": [
+                {"number": 5, "text": "<rt>ㆦ</rt>", "sound": "ㆦ"},
+                {"number": 6, "text": "<rt>ㄛ</rt>", "sound": "ㄛ"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 5, "buttonText": "<ruby>步<rt>ㄅ？˫</rt></ruby>", "sound": "poo7"},
+            "options": [
+                {"number": 5, "text": "<rt>ㆦ</rt>", "sound": "ㆦ"},
+                {"number": 6, "text": "<rt>ㄛ</rt>", "sound": "ㄛ"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 5, "buttonText": "<ruby>五<rt>ㆣ？˫</rt></ruby>", "sound": "goo7"},
+            "options": [
+                {"number": 5, "text": "<rt>ㆦ</rt>", "sound": "ㆦ"},
+                {"number": 6, "text": "<rt>ㄛ</rt>", "sound": "ㄛ"}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 8, "buttonText": "<ruby>矮<rt>？ˋ</rt></ruby>", "sound": "e2"},
+            "options": [
+                {"number": 8, "text": "ㆤ", "sound": "ㆤ"},
+                {"number": 9, "text": "ㄝ", "sound": "ㄝ"},
+                {"number": 10, "text": "ㄟ", "sound": null}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 8, "buttonText": "<ruby>彼<rt>ㄏ？</rt></ruby>", "sound": "he1"},
+            "options": [
+                {"number": 8, "text": "ㆤ", "sound": "ㆤ"},
+                {"number": 9, "text": "ㄝ", "sound": "ㄝ"},
+                {"number": 10, "text": "ㄟ", "sound": null}
+            ]
+        },
+        {
+            "question": "你聽到什麼？",
+            "questionType": "text sound button",
+            "answerType": "text sound option",
+            "answer": {"number": 8, "buttonText": "<ruby>衰<rt>ㄙㄨ？</rt></ruby>", "sound": "sue1"},
+            "options": [
+                {"number": 8, "text": "ㆤ", "sound": "ㆤ"},
+                {"number": 9, "text": "ㄝ", "sound": "ㄝ"},
+                {"number": 10, "text": "ㄟ", "sound": null}
+            ]
+        }
+    ]
+}

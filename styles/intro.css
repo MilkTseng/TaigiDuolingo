@@ -98,7 +98,7 @@ th, td {
   margin-top: 2em;
 }
 
-.start-button {
+.bottom-section button {
   background-color: forestgreen;
   color: yellowgreen;
   width: 5em;
@@ -116,20 +116,22 @@ th, td {
     padding: 0.5em 1em;
   }
   .content h2 {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   .content h3 {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
   .content p {
-    font-size: 1em;
+    font-size: 1.25em;
   }
   .content table {
     width: 100%;
+    writing-mode: vertical-lr;
   }
   .content th, .content td {
-    padding: 0.2em;
-    font-size: 1em;
+    padding: 0.5em 0em;
+    font-size: 1.1em;
+    writing-mode: horizontal-tb;
   }
   .content ruby {
     font-size: 1.1em;

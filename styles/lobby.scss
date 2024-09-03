@@ -10,47 +10,13 @@ body {
     background-color: rgb(37, 52, 37);
 }
 
-header {
-    width: 100%;
-    background-color: forestgreen;
-    color: white;
-    text-align: center;
-    padding: 1px 0;
-}
-
-nav {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    background-color: rgb(65, 87, 65);
-    margin: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: inline-block;
-}
-
-nav ul li a:hover {
-    background-color: rgb(94, 124, 94);
-}
+@import "header";
 
 main {
     padding: 1em 1em;
     color: white;
+    min-height: calc(100vh - 3.34em - 1em - 20px - 2em - 4.5em);
+    /* 3.34em header, 1em+20px nav, 2em main padding, 4.5em footer */
 }
 
 .courses-container {

@@ -1,7 +1,7 @@
 $BGColor: rgb(37, 52, 37);
 $lightBGColor: rgb(65, 87, 65);
 $lighterBGColor: rgb(94, 124, 94);
-$boldColor: rgb(80, 211, 80);
+$boldColor: forestgreen;
 
 * {
     box-sizing: border-box;
@@ -22,8 +22,13 @@ body {
 
 ruby {
     font-family: tauhu-oo, PingFangTC-Regular, "Microsoft JhengHei", sans-serif;
-    writing-mode: vertical-rl;
+    writing-mode: vertical-lr;
     font-size: 1.3em;
+    vertical-align: middle;
+}
+
+.taigiji {
+    writing-mode: vertical-lr;
     vertical-align: middle;
 }
 
@@ -40,6 +45,7 @@ rt {
 .content {
     color: white;
     padding: 1em 2em;
+    min-height: calc(100vh - 6.5em);
 }
 
 .content h2 {
@@ -69,7 +75,7 @@ rt {
 }
 
 .content .fa-solid {
-    color: rgb(80, 211, 80);
+    color: $boldColor;
     cursor: pointer;
     vertical-align: middle;
 }
@@ -82,6 +88,7 @@ table, th, td {
 
 table {
     border-radius: 0.5em;
+    
 }
 
 th, td {
@@ -98,7 +105,7 @@ th, td {
     margin-top: 2em;
 }
 
-.start-button {
+.bottom-section button {
     background-color: forestgreen;
     color: yellowgreen;
     width: 5em;
@@ -113,17 +120,27 @@ th, td {
 @media (max-width: 700px) {
     .content {
         width: 100%;
+        padding: 0.5em 1em;
         h2 {
-            font-size: 1.5em;
+            font-size: 2em;
         }
         h3 {
-            font-size: 1.3em;
+            font-size: 1.5em;
         }
         p {
-            font-size: 1em;
+            font-size: 1.25em;
+        }
+        table {
+            width: 100%;
+            writing-mode: vertical-lr;
         }
         th, td {
-            font-size: 1em;
+            padding: 0.5em 0em;
+            font-size: 1.1em;
+            writing-mode: horizontal-tb;
+        }
+        ruby {
+            font-size: 1.1em;
         }
     }
 }

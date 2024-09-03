@@ -17,10 +17,10 @@ body {
 }
 ruby {
   font-family: tauhu-oo, PingFangTC-Regular, "Microsoft JhengHei", sans-serif;
-  writing-mode: vertical-rl;
+  writing-mode: vertical-lr;
 }
 
-rt {
+ruby rt {
   font-family: BopomofoRuby;
   font-feature-settings: "vert";
   text-orientation: upright;
@@ -28,6 +28,10 @@ rt {
   letter-spacing: 0;
   ruby-align: center;
   text-align: center;
+}
+
+rt {
+  font-family: BopomofoRuby;
 }
 
 .head-section {
@@ -112,7 +116,7 @@ rt {
   color: white;
   font-size: 7vh;
   cursor: pointer;
-  writing-mode: vertical-rl;
+  writing-mode: vertical-lr;
   box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
 }
 
